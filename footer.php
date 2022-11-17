@@ -1,51 +1,54 @@
-<footer class="card text-center mb-2 container">
+
+<footer class="container">
 
   <!-- this -->
-  <div 
-    class="card-footer text-muted d-flex justify-content-between align-items-center">
-    <span 
-          class=" badge" >
-          &#169;2022
-    </span>
-    
-    <!-- social media -->
-    <div>
-        <a href="#">
-          <img
-              title="Youtube Link"
-              src="pictures/youtub-32x32.png"
-              alt="Youtube icon"
-             >
-        </a> 
-        <a href="#">
-          <img
-              src="pictures/facebook-32x32.png" 
-              title="Facebook Link"
-              alt="Facebook Icon"
-             >
-        </a> 
-        <a href="#">
-          <img
-              src="pictures/instagram-32x32.png" 
-              title="Instagram Link"
-              alt="Instagram Icon"
-            >
-        </a> 
-    </div>
-    
-    <!-- bottons -->
-    <div>
-        <a 
-            href="editAccount.php" 
-            class="btn btn-danger btn-outline-light badge mr-2 align-self-center ">
-            Edit Account
-        </a>
-        <br />
-        <a 
-            href="UserDelete.php"
-            class="btn btn-danger btn-outline-light badge mr-2 align-self-center">
-            Delete Account
-        </a>
+  <div class="card text-center mb-2">
+    <div 
+      class="card-footer text-muted d-flex justify-content-between align-items-center">
+      <span 
+            class=" badge" >
+            &#169;2022
+      </span>
+      
+      <!-- social media -->
+      <div>
+          <a href="#">
+            <img
+                title="Youtube Link"
+                src="pictures/youtub-32x32.png"
+                alt="Youtube icon"
+              >
+          </a> 
+          <a href="#">
+            <img
+                src="pictures/facebook-32x32.png" 
+                title="Facebook Link"
+                alt="Facebook Icon"
+              >
+          </a> 
+          <a href="#">
+            <img
+                src="pictures/instagram-32x32.png" 
+                title="Instagram Link"
+                alt="Instagram Icon"
+              >
+          </a> 
+      </div>
+      
+      <!-- bottons -->
+      <div>
+          <a 
+              href="editAccount.php" 
+              class="btn btn-danger btn-outline-light badge mr-2 align-self-center ">
+              Edit Account
+          </a>
+          <br />
+          <a 
+              href="UserDelete.php"
+              class="btn btn-danger btn-outline-light badge mr-2 align-self-center">
+              Delete Account
+          </a>
+      </div>
     </div>
   </div>
 </footer>

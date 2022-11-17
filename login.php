@@ -50,28 +50,31 @@ session_start();
       require_once "header.php";
       //Success password
       echo '
-             <div class="container text-center card mt-3 mb-4">
-                <div class="card-header alert-success">
-                  <h4 class="text-success">
-                    You are now logged in &#9745;
-                  </h4>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">
-                      Welcome to Capoeira Jornal
-                    </h5>
-                    <br />
-                    <a href="index.php" class="btn btn-warning btn-outline-dark">
-                      Home
-                    </a>
-                    <a href="add.php" class="btn btn-warning btn-outline-dark">
-                      Add Post
-                    </a>
+             <div class="container">
+                <div class="text-center card mt-3 mb-4">
+                  <div class="card-header alert-success">
+                      <h4 class="text-success">
+                          You are now logged in &#9745;
+                      </h4>
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">
+                          Welcome to Capoeira Jornal
+                      </h5>
+                      <br />
+                      <a href="index.php" class="btn btn-warning btn-outline-dark">
+                          Home
+                      </a>
+                      <a href="add.php" class="btn btn-warning btn-outline-dark">
+                          Add Post
+                      </a>
+                  </div>
                 </div>
              </div>'; 
              require_once "footer.php";
             exit();
   }
+  require_once "header.php";
 ?>
 
 <div class="mt-3 container col-md-6 col">
