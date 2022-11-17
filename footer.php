@@ -1,18 +1,52 @@
-<footer class="card text-center mb-4">
-  <div class="card-header">
-   Capoeira Journal
-  </div>
-  <div class="card-body mb-3 ">
-    <h5 class="card-title">
-    <ion-icon name="logo-youtube"></ion-icon>
-    </h5>
-    <p class="card-text">With supporting text</p>
-    <a href="editAccount.php" class="btn btn-danger">Eddit Account</a>
-    <a href="UserDelete.php" class="btn btn-danger">Delete Account
-    </a>
-  </div>
-  <div class="card-footer text-muted ">
-    &#169;2022
+<footer class="card text-center mb-2 container">
+
+  <!-- this -->
+  <div 
+    class="card-footer text-muted d-flex justify-content-between align-items-center">
+    <span 
+          class=" badge" >
+          &#169;2022
+    </span>
+    
+    <!-- social media -->
+    <div>
+        <a href="#">
+          <img
+              title="Youtube Link"
+              src="pictures/youtub-32x32.png"
+              alt="Youtube icon"
+             >
+        </a> 
+        <a href="#">
+          <img
+              src="pictures/facebook-32x32.png" 
+              title="Facebook Link"
+              alt="Facebook Icon"
+             >
+        </a> 
+        <a href="#">
+          <img
+              src="pictures/instagram-32x32.png" 
+              title="Instagram Link"
+              alt="Instagram Icon"
+            >
+        </a> 
+    </div>
+    
+    <!-- bottons -->
+    <div>
+        <a 
+            href="editAccount.php" 
+            class="btn btn-danger btn-outline-light badge mr-2 align-self-center ">
+            Edit Account
+        </a>
+        <br />
+        <a 
+            href="UserDelete.php"
+            class="btn btn-danger btn-outline-light badge mr-2 align-self-center">
+            Delete Account
+        </a>
+    </div>
   </div>
 </footer>
  <!-- Optional JavaScript -->

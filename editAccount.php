@@ -5,7 +5,15 @@ $title = "Edit Account";
 require_once "header.php";
 
 if (!isset($_SESSION['user_id'])) {
-  echo '<p class="login">Please <a href="login.php">log in</a> to access this page.</p>';
+  
+  //Alert not login.
+  echo '
+      <div class="alert alert-danger container text-center mt-3 h4" role="alert">
+          Please <a  class="alert-link" href="login.php">login</a> to access this page!
+      </div>';
+
+  
+  require_once "footer.php";
   exit();
 }
  
@@ -20,8 +28,6 @@ if ($_POST) {
     $last_name = mysqli_real_escape_string($dbc,$_POST['last_name']);
 
     if (!empty($username) && !empty($password) && !empty($first_name) && !empty($last_name)) {
-
-        //get the ipunt from user from imput name
         
         //cheque if user name is unique
         $query = "SELECT * FROM journal_user WHERE username = '$username'";
@@ -36,12 +42,19 @@ if ($_POST) {
                             WHERE id=$id")
             or die('#1Error querying database.');
             
-            echo '<div class="container text-center bg-white">
-                        <h4 style= "color:black">
-                            Your new account has been successfully edit.
-                        </h4>
-                    </div>
-                    ';
+            echo '
+                <div class="alert alert-success container text-center bg-white mt-3">
+                    Successfully edit!
+                    <br />
+                    Add a <a  class="alert-link" href="add.php">New post</a>
+                    Or Visete the <a class="alert-link" href=".php">home</a> page 
+                </div>
+
+                    <div class="alert alert-danger container text-center mt-3 h4" role="alert">
+                    Please <a  class="alert-link" href="login.php">login</a> to access this page!
+                </div>';
+                $_SESSION = array();
+                    
         } 
         else {
                // An account already exists for this username, so display an error message
@@ -85,5 +98,7 @@ if ($_POST) {
     <input type="submit" value="Submit Form" name="submit" />
   </form>
 
-<?php mysqli_close($dbc);?>
+<?php mysqli_close($dbc);
+require_once "footer.php";
+?>
 

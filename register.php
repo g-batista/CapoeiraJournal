@@ -56,18 +56,18 @@
      mysqli_close($dbc);  
 ?>
 
-<div class="mx-auto mb-3 mt-3  text-center container row"
-     style="width: 300px; background-color:#FFFF8F"
->
+<div 
+    class="mx-auto mb-3 mt-3  text-center container row"
+    style="width: 300px; background-color:#FFFF8F">
     <br />
     <h3 class="col-12 "><strong class="text-dark">Register</strong></h3>
 
     <!-- other way to use action attribute is action="<?php echo $_SERVER['PHP_SELF']; ?>"-->
-    <form   
+    <form
         method="post" 
         action="register.php"
         class="col-12 form-group"
-    >
+         >
         
         <label for="username" style= "color:black" class="form-label">Username:</label><br />
         <input type="text" id="username" name="username" class="form-control" autofocus required  /><br>
@@ -91,3 +91,7 @@
         <br />   
     </form>
 </div>
+<?php
+  require_once "footer.php";
+?>
+

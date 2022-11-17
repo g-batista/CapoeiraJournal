@@ -14,6 +14,7 @@
   <?php echo '<title>'.$title.'</title>' ?>
 
 </head>
+
 <div class="container d-flex-sm">
 <a id="top"></a>
   <div  id="back" 
@@ -66,10 +67,9 @@
           }   
           ?>
           <li class="nav-item">
-            <a class="nav-link" id="index-tab" href="aboutus.php" aria-controls="profile" aria-selected="false">About Us &#129488</a>
+            <a class="nav-link" id="index-tab" href="aboutus.php" aria-controls="profile" aria-selected="false">About Us</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" id="index-tab" href="search.php" aria-controls="profile" aria-selected="false">Search</a>
           </li>
     </ul>
-</div>

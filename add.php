@@ -4,34 +4,35 @@ require_once "system.php";
 $title = 'Add Post';
 require_once "header.php";
 
-    echo'<div id="card" style="margin-top:9px" class="container">
-            <h3 style="text-align:center; color:">Add your post</h3></br>
-            <p id="home" style="text-align:center">To add your post you need to log in or register. 
-        You are welcome to make as many post as you want, one at the time. After entering your posts, our team members will have to approve. Please enjoy!</p></br>
-      </div>';
       
 
 
     //if not loged see this message
     if (!isset($_SESSION['user_id'])) {
       echo '</br>
-          <div id="card" class="container">
-              <h3 class="login" style="text-align:center">
-                <strong >Please </strong>
-                <a href="login.php" style="color:red">log in</a> to add your post
-              </h3>
-              <h3 class="" style="text-align:center">
-                <strong>Or</strong><a href="register.php" style="color:red">register</a> if you are not a member
-              </h3></br>
-           </div>';
-
-
-  echo '<center style="font-size:120px">&#9940;</center>';
+            <div 
+                class="alert alert-danger container text-center mt-3 h4" role="alert"
+                >
+                <strong >Please</strong>
+                <a href="login.php" style="color:red">log in</a> to add your post!
+                <br /> 
+                <strong>Or</strong><a href="register.php" style="color:red"> register</a> if you are not a member.
+            </div>
+           ';
+          require_once "footer.php";
   exit();
 }
   
     //check if the post is submint
     if (isset($_POST['submit'])) {
+
+      echo'
+          <div id="card" style="margin-top:9px" class="container">
+              <h3 style="text-align:center; color:">Add your post</h3></br>
+              <p id="home" style="text-align:center">To add your post you need to log in or register. 
+              You are welcome to make as many post as you want, one at the time. After entering your posts, our team members will have to approve. Please enjoy!</p></br>
+          </div>';
+          
       move_uploaded_file($_FILES['picture']['tmp_name'], "pictures/".$_FILES['picture']['name']);
 
     $user_id = $_SESSION['user_id'];
@@ -41,24 +42,27 @@ require_once "header.php";
       $msg = mysqli_real_escape_string($dbc,trim($_POST['msg']));
      
       if (!empty($title) && !empty($msg)) {
-        $picture= $_FILES['picture']['name'];
-      // Write the data to the database
-      mysqli_query($dbc,"INSERT INTO comments
-        (name, title, msg, picture_id, user_id, picture)
-             VALUES ('','$title', '$msg', 0, '$user_id','$picture')")
-          or die ('Error getting on the data base');
+          $picture= $_FILES['picture']['name'];
+          // Write the data to the database
+          mysqli_query($dbc,"INSERT INTO comments
+            (name, title, msg, picture_id, user_id, picture)
+                VALUES ('','$title', '$msg', 0, '$user_id','$picture')")
+              or die ('Error getting on the data base');
 
-      // Confirm success with the user
-      echo '
-            <div class="alert alert-success container text-center mt-3 h4" role="alert">
-                Thanks for adding your new post!<br /> 
-                We will review and add to the home page immediately
-            </div>
-            <div class="alert alert-warning container  mt-3 h4 alert-dismissible" role="alert">
-              <strong>Post Title:</strong> ' . $title . '<br /><strong>Argument:</strong> ' . $msg . '
-            </div>
-            ';
-      }
+          // Confirm success with the user
+          echo '
+                <div 
+                    class="alert alert-success container text-center mt-3 h4" role="alert">
+                    Thanks for adding your new post!
+                    <br /> 
+                    We will review and add to the home page immediately
+                </div>
+                <div 
+                      class="alert alert-warning container  mt-3 h4 alert-dismissible" role="alert">
+                    <strong>Post Title:</strong> ' . $title . '
+                    <br /><strong>Argument:</strong> ' . $msg . '
+                </div>';
+       }
   }
 ?>
 

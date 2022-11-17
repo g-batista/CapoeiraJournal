@@ -9,7 +9,8 @@ if (!isset($_SESSION['user_id'])) {
     <div class="alert alert-danger container text-center mt-3 h4" role="alert">
       Please <a  class="alert-link" href="login.php">login</a> to access this page!
     </div>
-  ';
+    ';
+    require_once "footer.php";
   exit();
 }
  
@@ -25,6 +26,7 @@ $id= $_GET['id'];
       mysqli_query($dbc, "DELETE FROM comments WHERE id=$id")
           or die('Error querying database.');
          
+          //success deleted comment
           echo '
             <div class="alert alert-success container text-center mt-3 h4" role="alert">
               Post deleted with success!
@@ -35,5 +37,7 @@ $id= $_GET['id'];
             </div>
          ';  
 ?>
-<?php mysqli_close($dbc);?>
+<?php mysqli_close($dbc);
+  require_once "footer.php";
+?>
 

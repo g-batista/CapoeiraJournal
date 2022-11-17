@@ -21,13 +21,15 @@ session_start();
       if(!$user){
         require_once "header.php";
 
+        //Warning incorrect password
         echo '
           <div class="container">
-              <div class=" text-center mt-3 card ">
+              <div class=" text-center mt-3 mb-4 card ">
                 <div class="" role="alert">
                   <h5 class="card-header alert alert-danger" role="alert">
-                      Incorrect username or password!
+                      Incorrect <strong>username or password!</strong>
                   </h5>
+                </div>
                 <div class="card-body">
                   <h5 class="card-title">Please try again or Register</h5>
                   <br/>
@@ -37,6 +39,8 @@ session_start();
               </div>
           </div>
           ';
+          require_once "footer.php";
+
         die; 
       }
 
@@ -44,24 +48,30 @@ session_start();
 
       //Success senario
       require_once "header.php";
-
+      //Success password
       echo '
-            <div class=" container text-center card mt-3">
-              <div class="card-header alert-success">
-                <h4 class="text-success">
-                  You are now logged in &#9745;
-                </h4>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Welcome to Capoeira Jornal</h5>
-              <br />
-                <a href="index.php" class="btn btn-light btn-outline-warning">Home</a>
-                <a href="add.php" class="btn btn-light btn-outline-warning">Add Post</a>
-              </div>
-            </div>';
-      exit;
+             <div class="container text-center card mt-3 mb-4">
+                <div class="card-header alert-success">
+                  <h4 class="text-success">
+                    You are now logged in &#9745;
+                  </h4>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                      Welcome to Capoeira Jornal
+                    </h5>
+                    <br />
+                    <a href="index.php" class="btn btn-warning btn-outline-dark">
+                      Home
+                    </a>
+                    <a href="add.php" class="btn btn-warning btn-outline-dark">
+                      Add Post
+                    </a>
+                </div>
+             </div>'; 
+             require_once "footer.php";
+            exit();
   }
-  require_once "header.php";
 ?>
 
 <div class="mt-3 container col-md-6 col">
@@ -108,3 +118,6 @@ session_start();
       </div>
   </form>
 </div>
+<?php
+  require_once "footer.php";
+?>
