@@ -5,7 +5,6 @@ $title = "Login";
 
 session_start();
 
-
   if ($_POST) {
       $username = mysqli_real_escape_string ($dbc,$_POST['username']);
       $password = mysqli_real_escape_string($dbc,$_POST ['password']);
@@ -41,7 +40,7 @@ session_start();
           ';
           require_once "footer.php";
 
-        die; 
+        die(); 
       }
 
       $_SESSION["user_id"]= $user['id'];

@@ -5,10 +5,11 @@
         
         $title = "My Comments";
         // hide element
-        echo '<style>
-        div.hideMypost {
-            display: none;
-                        </style>';
+        echo '
+        <style>
+                div.hideMypost {
+                    display: none;
+        </style>';
     }
     else{
         $title = "Capoeira";

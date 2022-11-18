@@ -7,9 +7,11 @@ require_once  "system.php";
  
 if (!isset($_SESSION['user_id'])) {
     echo '
-      <div class="alert alert-danger container text-center mt-3 h4" role="alert">
+    <div class="container">
+      <div class="alert alert-danger text-center mt-3 h4" role="alert">
         Please <a  class="alert-link" href="login.php">login</a> to access this page!
       </div>
+    </div>  
     ';
     require_once "footer.php";
     exit();
@@ -32,35 +34,41 @@ if (!isset($_SESSION['user_id'])) {
 
         // Confirm success delete user
         echo '
-            <div class="alert alert-success container text-center mt-3 h4" role="alert">
-                Your account was successfully removed!
+            <div calss="container">
+                <div class="alert alert-success text-center mt-3 h4" role="alert">
+                    Your account was successfully removed!
+                </div>
+                <div class="card-body alert alert-warning container text-center mt-3 h4">
+                  <h5 class="card-title">Go here to create new account!</h5>
+                  <a href="register.php" class="btn btn-outline-dark btn-warning"">New Account</a>
+                </div>
             </div>
-            <div class="card-body container alert alert-warning container text-center mt-3 h4">
-              <h5 class="card-title">Go here to create new account!</h5>
-              <a href="register.php" class="btn btn-outline-dark btn-warning"">New Account</a>
-            </div>
+
         ';
         $_SESSION = array();
     }
     else {
       // not removed account message
       echo '
-          <div 
-              class="alert alert-danger container text-center mt-3 h4" role="alert">
-              Account was <strong>NOT</strong> removed!
-          </div>
-          <div 
-              class="card-body container alert alert-info container text-center mt-3 h4">
-            <h5 class="card-title">Check the new Capoeira Journals</h5>
-            <a href="index.php" class="btn btn-outline-dark btn-warning"">Home</a>
-          </div>
+            <div class="container">
+                <div 
+                    class="alert alert-danger  text-center mt-3 h4" role="alert">
+                    Account was <strong>NOT</strong> removed!
+                </div>
+                <div 
+                    class="card-body  alert alert-info  text-center mt-3 h4">
+                  <h5 class="card-title">Check the new Capoeira Journals</h5>
+                  <a href="index.php" class="btn btn-outline-dark btn-warning"">Home</a>
+                </div>
+            </div>
           ';
     }
   }
 
   else{
     echo '
-        <div class="alert alert-danger mt-4 container text-center h4">
+    <div class="container">
+        <div class="alert alert-danger mt-4  text-center h4">
             Are you sure you want to delete your account?
             <form method="post" action="" class="h3">
                 <input type="radio" name="confirm" value="Yes" /> Yes
@@ -72,6 +80,7 @@ if (!isset($_SESSION['user_id'])) {
                 </button>
             </form>
         </div>
+     </div>   
         ';
   }
   

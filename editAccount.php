@@ -8,12 +8,15 @@ if (!isset($_SESSION['user_id'])) {
   
   //Alert not login.
   echo '
-      <div class="alert alert-danger container text-center mt-3 h4" role="alert">
-          Please <a  class="alert-link" href="login.php">login</a> to access this page!
-      </div>';
+        <div class="container">
+            <div class="alert alert-danger text-center mt-3 h4" role="alert">
+                Please <a  class="alert-link" href="login.php">login</a> to access this page!
+            </div>
+        </div>
+      ';
 
-  
   require_once "footer.php";
+
   exit();
 }
  
@@ -35,27 +38,38 @@ if ($_POST) {
 
         if (mysqli_num_rows($data) == 0) {
 
-        //commet query to add iformatios
-        mysqli_query($dbc, "UPDATE journal_user 
+          //commet query to add iformatios
+          mysqli_query($dbc, "UPDATE journal_user 
                             SET username ='$username', 
                             password= sha1('$password'),first_name='$first_name',last_name='$last_name'
                             WHERE id=$id")
-            or die('#1Error querying database.');
+            or die('#1 Error querying database.');
             
-            echo '
-                <div class="alert alert-success container text-center bg-white mt-3">
-                    Successfully edit!
-                    <br />
-                    Add a <a  class="alert-link" href="add.php">New post</a>
-                    Or Visete the <a class="alert-link" href=".php">home</a> page 
-                </div>
+            unset($_SESSION['user_id']);
 
-                    <div class="alert alert-danger container text-center mt-3 h4" role="alert">
-                    Please <a  class="alert-link" href="login.php">login</a> to access this page!
-                </div>';
+            //success message
+            echo '
+                  <div class="container">
+                      <div class="alert alert-success  text-center mt-3 h4">
+                          Successfully edit account!
+                          <br />
+                          Add a <a  class="alert-link" href="add.php">New post</a>
+                          Or Visete the <a class="alert-link" href=".php">Home</a> page. 
+                      </div>
+
+                      <div class="alert alert-danger  text-center mt-3 h4" role="alert">
+                          Please <a  class="alert-link" href="login.php">login</a> again to access this page!
+                      </div>
+                  </div>
+
+                  <style>
+                      form.hideForm {
+                      display: none;
+                  </style>
+                ';
                 $_SESSION = array();
-                    
-        } 
+          } 
+              
         else {
                // An account already exists for this username, so display an error message
                echo '
@@ -67,36 +81,63 @@ if ($_POST) {
                     ';
             }
     }
-        
+
+
 }  
 
     $result= mysqli_query($dbc, "SELECT * FROM journal_user WHERE id=$id")
-    or die('#2Error querying database.');
+    or die('#2 Error querying database.');
 
     $user= mysqli_fetch_assoc($result);
 
 ?>
-<form id="form" class="mx-auto" style="width: 300px" method="post" action="">
-    
-    <label for="title">first name:</label><br />
-    <input type="text" id="first_name" name="first_name" value= "<?php echo $user['first_name'];?>" /><br />
+    <form 
+      id="form" 
+      class="container mt-3 col-4 bg-warning hideForm" 
+      method="post" 
+      action="">
+      <div class="form-group row">   
+        <div class="col-4 mt-3">  
+          <label for="first_name" class="form-label">First name:</label>
+        </div>
+        <div class="col mt-3">
+            <input type="text" id="first_name" name="first_name" class="form-control" autofocus required value= "<?php echo $user['first_name'];?>" />
+        </div>   
+      </div>
 
-    <div class="form-group">
-      <label for="text"> last name:</label>
-      <input type="text" id="last_name" name="last_name" value= "<?php echo $user['last_name'];?>" /><br />
-    </div>
-    <div class="form-group">
-      <label for="text"> Username:</label>
-      <input type="text" id="username" name="username" value= "<?php echo $user['username'];?>" /><br />
-    </div>
-    <div class="form-group">
-      <label for="text">New Password:</label>
-      <input type="text" id="password" name="password"/><br />
-    </div>
+      <div class="form-group row">
+        <div class="col-4">
+          <label for="text"> Last Name:</label>
+        </div>
+        <div class="col">
+          <input type="text" id="last_name" name="last_name" class="form-control" value= "<?php echo $user['last_name'];?>" required />
+        </div>
+      </div>
 
+      <div class="form-group row">
+        <div class="col-4">
+            <label for="text"> Username:</label>
+        </div>
+        <div class="col">
+            <input type="text" id="username" name="username" class="form-control" value= "<?php echo $user['username'];?>" required />
+        </div>
+      </div>
 
-    <input type="submit" value="Submit Form" name="submit" />
-  </form>
+      <div class="form-group row">
+        <div class="col-4">
+          <label for="text">Password:</label>
+        </div>
+        <div class="col">
+          <input type="text" id="password" name="password" class="form-control" placeholder="New Password" required/>
+        </div>
+      </div>
+
+      <div class="form-group row justify-content-center">
+        <button type="submit"  value="Submit Form" name="submit" class="btn btn-primary mb-3">
+            Submit
+        </button>
+      </div>
+    </form>
 
 <?php mysqli_close($dbc);
 require_once "footer.php";

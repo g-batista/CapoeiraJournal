@@ -12,7 +12,7 @@ require_once  "header.php";
   
  }
 ?>
-<center class="container mt-3">
+<center class="container my-3">
   <div class="card ">
     <div class="card-header alert alert-success">
       <h1><span class="badge badge-pill badge-success">&#9745;</span></h1>

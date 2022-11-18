@@ -4,9 +4,6 @@ require_once "system.php";
 $title = 'Add Post';
 require_once "header.php";
 
-      
-
-
     //if not loged see this message
     if (!isset($_SESSION['user_id'])) {
       echo '</br>
