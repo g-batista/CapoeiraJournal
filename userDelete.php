@@ -1,6 +1,5 @@
 
 <?php
-require_once "authorize.php";
 $title = 'Delete User';
 require_once  "header.php";
 require_once  "system.php";
@@ -82,6 +81,8 @@ if (!isset($_SESSION['user_id'])) {
         </div>
      </div>   
         ';
+        require_once  "header.php";
+
   }
   
 require_once "footer.php";

@@ -97,12 +97,12 @@ if ($_POST) {
       method="post" 
       action="">
       <div class="form-group row">   
-        <div class="col-4 mt-3">  
-          <label for="first_name" class="form-label">First name:</label>
-        </div>
-        <div class="col mt-3">
-            <input type="text" id="first_name" name="first_name" class="form-control" autofocus required value= "<?php echo $user['first_name'];?>" />
-        </div>   
+          <div class="col-4 mt-3">  
+            <label for="first_name" class="form-label">First name:</label>
+          </div>
+          <div class="col mt-3">
+              <input type="text" id="first_name" name="first_name" class="form-control" autofocus required value= "<?php echo $user['first_name'];?>" />
+          </div>   
       </div>
 
       <div class="form-group row">

@@ -40,9 +40,7 @@
     &#8593;
 </a>
 
-<body class="container">
-
-    <div class="mt-4 hideMypost"
+    <div class="mt-4 hideMypost container"
          style="background-color:black"> 
         <p  id="home">
                Welcome to Capoeira Journal! Here everyone can give a contribution to the capoeira world.
@@ -106,7 +104,7 @@
      while ($post = mysqli_fetch_assoc($posts)) {
 
             echo '<div  id="card" 
-                        class="card mt-3"
+                        class="card mt-3 container"
                         style="border-color: yellow;
                         border-style:solid;
                         border-width: 3px;"
@@ -146,8 +144,8 @@
                     </div>';
                 echo '</div></br>';
                 echo'</div>';
-        echo '<div></br> 
-        </body>';
+             echo '<div>
+             </br>';
     } 
 
    mysqli_close($dbc);

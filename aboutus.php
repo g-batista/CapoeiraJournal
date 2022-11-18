@@ -30,7 +30,8 @@
             }
         }
 ?>
-    <div class="card container mt-3 bg-info">
+ <div class="container">
+    <div class="card mt-3 bg-info">
         <h1 style="text-align:center"
             class="card-title"
         >
@@ -38,12 +39,13 @@
         </h1>
         <p id="home" id="tab" class="card-text mb-3 text-center "> 
             &nbsp;&nbsp; Capoeira is an afro-Brazilian art that is intended to enrich all instances of life. 
-            Capoeira is a fight, a dance, and a game body. On this web page, you or your capoeira group will find the keys to connect to other groups, share their philosophy, and learn about all subjects of capoeira at all levels. The content is all made by the community/users and the posts will be checked to make sure the content is appropriate. 
-            Finnaly, the main objectve is to connect the capoeristas and suport the world wide capoeira grupo.  
+            Capoeira is a fight, a dance, and a body game. On this web page, you or your capoeira group will find the keys to connect to other groups, share the capoeira philosophy, and learn about all subjects of capoeira at all levels. The content is all made by the community/users and the posts will be checked to make sure the content is appropriate. 
+            Finnaly, the main objectve is to connect the capoeristas and suport the world wide capoeira grupo.
+            Give ad take the best of capoira life is here now!
+             <strong>Wellcome!</strong>   
         </p>
     </div>
-
-
+</div>
 
 <div  
      class="mx-auto mb-3 my-3  text-center container row justify-content-md-center"      
@@ -56,7 +58,7 @@
             <label for="email">Email address:</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@iseethefuture.com"  name="email">
             </div>
-        
+
         <div class="form-group">
             <label for="ex">
                 How was your experience?</br>

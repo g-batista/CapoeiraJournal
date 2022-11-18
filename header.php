@@ -66,7 +66,7 @@
           }   
           ?>
           <li class="nav-item">
-            <a class="nav-link" id="index-tab" href="aboutus.php" aria-controls="profile" aria-selected="false">About</a>
+            <a class="nav-link" id="index-tab" href="aboutus.php" aria-controls="profile" aria-selected="false">About Site</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" id="index-tab" href="search.php" aria-controls="profile" aria-selected="false">Search</a>
