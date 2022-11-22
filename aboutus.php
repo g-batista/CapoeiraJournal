@@ -56,13 +56,13 @@
         <form method="post" class="">
             <div class="form-group">
             <label for="email">Email address:</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@iseethefuture.com"  name="email">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="capoeiraJournal@user.com" name="email" autofocus>
             </div>
 
         <div class="form-group">
             <label for="ex">
-                How was your experience?</br>
-                1-not good, 5-excellent.
+                Experience leve?</br>
+                5=excellent.
             </label>
             <select name="ex" class="form-control">
                 <option value="0">Select</option>
@@ -80,7 +80,7 @@
             <button                 
                     class="btn btn-outline-dark btn-warning mb-5"
                     type="submit">
-                Submit form
+                Submit
             </button>
         </form>
 </div>

@@ -14,62 +14,82 @@
   <?php echo '<title>'.$title.'</title>' ?>
 
 </head>
-<div class="container d-flex-sm">
 <a id="top"></a>
-  <div  id="back" 
-        style="margin-top: 6px;">
-    <img src="pictures/caribe-roda2.jpeg" 
-        class="rounded mx-auto d-block
-        img-fluid"
-        style="padding-top: 20px"
-        width="650px" 
-        height="200px" 
-        alt="Capoeira roda very colofull Caribé">
-  </div>
-  
-  <!-- class="mx-auto"  -->
 
-    <ul id="back" style="" class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link" href="index.php" aria-controls="profile" aria-selected="false">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="add.php" aria-controls="contact" aria-selected="false">Add Post</a>
-          </li>
+  <div
+      class=" mt-2 container  d-flex justify-content-center">
+      
+</div>
 
-          <?php
-          if(empty($_SESSION["user_id"])){
-            echo '
-                <li class="nav-item">
-                  <a class="nav-link" id="index-tab" href="login.php" aria-controls="profile" aria-selected="false">Log in </a>
-                </li>
+<div class="container">
+<img src="pictures/caribe-roda2.jpeg" 
+      class="img-fluid"
+      style=" height: 200px;
+            width: 1110px;"
+     
+      alt="Capoeira roda very colofull Caribé">
 
-                  <li class="nav-item">
-                  <a class="nav-link" id="index-tab" 
-                      href="register.php"aria-controls="profile" aria-selected="false">Register</a>     
-                </li>
-            ';
-          }   
-          ?>
-        <?php
-          if(!empty($_SESSION["user_id"])){
-            echo '
-                  <li class="nav-item">
-                    <a class="nav-link" id="index-tab" 
-                    href="logout.php" aria-controls="profile" aria-selected="false">Logout </a>
+    <nav 
+        class="navbar navbar-expand-lg navbar-light bg-dark d-flex justify-content-between"        
+        role="navigation">
+        
+        <!-- addicionanr logo fivicon -->
+        <a class="navbar-brand text-white" href="index.php">Capoeira Jornal</a><img src="" alt="">
+
+        <button type="button" class="navbar-toggle bg-transparent d-lg-none" 
+                data-toggle="collapse" data-target="#navbar" 
+                aria-controls="navbar"
+                aria-expanded="false" 
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon bg-dark"></span>
+        </button>
+
+      <div class="collapse navbar-collapse" id="navbar">
+          <ul class="d-md-flex ml-auto nav-bar-nav list-unstyled p-3 m-1">
+                  <li class="nav-item active">
+                    <a class="nav-link text-white" href="index.php" aria-controls="profile" aria-selected="false">Home</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link text-white" href="add.php" aria-controls="contact" aria-selected="false">Add Post</a>
                   </li>
 
-                  <li class="nav-item">
-                    <a class="nav-link" id="index-tab" href="index.php?mycomments"aria-controls="profile" aria-selected="false">My Comments</a>
+                  <?php
+                  if(empty($_SESSION["user_id"])){
+                    echo '
+                        <li class="nav-item">
+                          <a class="nav-link text-white" id="index-tab" href="login.php" aria-controls="profile" aria-selected="false">Log in </a>
+                        </li>
+
+                          <li class="nav-item">
+                          <a class="nav-link text-white" id="index-tab" 
+                              href="register.php"aria-controls="profile" aria-selected="false">Register</a>     
+                        </li>
+                    ';
+                  }   
+                  ?>
+                <?php
+                  if(!empty($_SESSION["user_id"])){
+                    echo '
+                          <li class="nav-item">
+                            <a class="nav-link text-white" id="index-tab" 
+                            href="logout.php" aria-controls="profile" aria-selected="false">Logout </a>
+                          </li>
+
+                          <li class="nav-item">
+                            <a class="nav-link text-white" id="index-tab" href="index.php?mycomments"aria-controls="profile" aria-selected="false">My Comments</a>
+                          </li>
+                        ';
+                  }   
+                  ?>
+                  <li class="nav-item ">
+                    <a class="nav-link text-white" id="index-tab" href="aboutus.php" aria-controls="profile" aria-selected="false">About Us</a>
                   </li>
-                ';
-          }   
-          ?>
-          <li class="nav-item">
-            <a class="nav-link" id="index-tab" href="aboutus.php" aria-controls="profile" aria-selected="false">About Site</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="index-tab" href="search.php" aria-controls="profile" aria-selected="false">Search</a>
-          </li>
-    </ul>
+                  <li class="nav-item ">
+                    <a class="nav-link text-white" id="index-tab" href="search.php" aria-controls="profile" aria-selected="false">Search</a>
+                  </li>
+            </ul>
+      </div>
+      <!-- class="mx-auto"  -->
+
+    </nav>
 </div>

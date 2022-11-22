@@ -6,7 +6,8 @@
   require_once  "system.php";
 
 
-  echo'<h4 style="text-align:center; color: FFEB3B"><a href="userreport.php">User Report Path</a></h4>';
+  echo'<h4 class="container alert alert-warning col-4 text-center mt-3"><a href="userreport.php" class="text-dark">User Report Path</a></h4>';
+  // <h4 class="container alert alert-warning col-4 text-center mt-3"><a class="text-dark" href="admin.php">Admin Path</a></h4>
 
   // Retrieve the information data from MySQL
   $query = "SELECT * FROM comments ORDER BY date DESC";
@@ -15,11 +16,24 @@
  
 
   // Loop through the array data, formatting it as HTML 
-  echo '<table class= "table">';
+  echo '
+      <div class="container">
+        <table class= "table table-bordered table-warning table-responsive-sm">
+        <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Date</th>
+          <th scope="col">Message</th>
+          <th scope="col">Remove?</th>
+          <th scope="col">Aprove?</th>
+        </tr>
+      </thead>
+        ';
   while ($row = mysqli_fetch_array($data)) { 
     
     //Display the score data
-    echo '<tr class="blogtable"><td><strong>' . $row['title'] . '</strong></td>';
+    echo '<tr class="">
+          <td>' . $row['title'] . '</td>';
     echo '<td>' . $row['date'] . '</td>';
     echo '<td>' . $row['msg'] . '</td>';
 
@@ -32,8 +46,8 @@
 
   }
   
-  echo '</table>';
-
+  echo '</table>
+     </div>';
   
   mysqli_close($dbc);
     require_once "footer.php";

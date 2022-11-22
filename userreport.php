@@ -5,7 +5,7 @@ require_once "system.php";
 $title = "User Report";
 require_once "header.php";
 
-    echo'<h4 style="text-align:center; color: FFEB3B"><a href="admin.php">Admin Path</a></h4>';
+    echo'<h4 class="container alert alert-warning col-4 text-center mt-3"><a class="text-dark" href="admin.php">Admin Path</a></h4>';
 
     //selec all from data base
     $data = mysqli_query($dbc,"SELECT * FROM ux ")
@@ -15,23 +15,24 @@ require_once "header.php";
     while ($report = mysqli_fetch_assoc($data)){
 
        
-        echo'<div>';
-        echo '<table id="table">';
-        echo '<tr><td class="label">email:</td><td>' . $report['email'] . '</td></tr>';
-        echo '<tr><td class="label">Experience:</td><td>' . $report['ex'] . '</td></tr>';
-        echo '<tr><td class="label">Text:</td><td>' . $report['text'] . '</td></tr></br>';
-        echo '</table>';
-    
-        echo'</div>';
+        echo'
+            <div class="container d-flex justify-content-center">
+                <table class="my-3 table-warning table-bordered border border-danger">
+                    <tr class="table-dark">
+                        <th class="text-dark" scope="row">email: </th>
+                        <td class="text-info"> ' . $report['email'] . '</td>
+                    </tr>
+                    <tr>
+                        <th class="text-dark" scope="row">Experience: </th>
+                        <td class="text-info"> ' . $report['ex'] . '</td>
+                    </tr>
+                    <tr class="table-dark">
+                        <th class="text-dark" scope="row">Message: </th>
+                        <td class="text-info"> ' . $report['text'] . '</td>
+                    </tr></br>
+                </table>
+            </div>';
     }
 
         mysqli_close($dbc);
-
-
-        
-        
-
-
-
-
 ?>
