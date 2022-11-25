@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="style.css">
   <!-- use the page set title variable -->
   <?php echo '<title>'.$title.'</title>' ?>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="pictures/logFavicon/favicon-16x16.png">
 
 </head>
 <a id="top"></a>
@@ -34,7 +37,7 @@
         role="navigation">
         
         <!-- addicionanr logo fivicon -->
-        <a class="navbar-brand text-white" href="index.php">Capoeira Jornal</a><img src="" alt="">
+        <a class="navbar-brand text-white" href="index.php"><img src="pictures/logFavicon/android-chrome-192x192.png" alt=""></a>
 
         <button type="button" class="navbar-toggle bg-transparent d-lg-none" 
                 data-toggle="collapse" data-target="#navbar" 
