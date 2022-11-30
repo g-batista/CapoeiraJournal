@@ -10,7 +10,9 @@
     $id = $_GET['id'];  
   }
   else {
-    echo '<p class="error">Sorry, no post was specified for approval.</p>';
+    echo '<div class="alert alert-danger container my-3">
+            Sorry, no post was specified for approval.
+          </div>';
   }
 
   if (isset($_POST['submit'])) {
@@ -21,30 +23,34 @@
       mysqli_close($dbc);
 
       // Confirm success with the user
-      echo '<h2 style="text-align:center">The post has been successfully approved.</h2>';
+      echo '<div alert alert-success h3 container text-center my-3>
+              The post has been successfully approved.
+            </div>';
 
     }
     // Message for no// yes was not showing
     else {
-      echo '<p class="error">Sorry, there was a problem approving the post.</p>';
+      echo '<div class="alert alert-danger text-center container my-3">
+              Sorry, there was a problem approving the post.
+            </div>';
     }
   }
 
   //if submit was not set show the option to select
   else{
-    echo'<div class="mx-auto" style="width: 200px">'; 
-      echo '</form>';       
-              echo '<p>Are you sure you want to approve this post?</p>';
-              echo '<form method="post" action="">';
-              echo '<input type="radio" name="confirm" value="Yes" /> Yes ';
-              echo '<input type="radio" name="confirm" value="No" checked="checked" /> No <br /> </br>';
-              echo '<input type="submit" value="Submit" name="submit" />';      
-      echo '</form>';
-    echo '</div></br>';
+    echo'<div class="mx-auto my-3 bg-info container" style="width: 400px">
+          </form>       
+              <div alert alert-danger>Are you sure you want to approve this post?</div>
+              <form method="post" action="">
+                <input type="radio" name="confirm" value="Yes" /> Yes
+                <input type="radio" name="confirm" value="No" checked="checked" /> No <br /> </br>
+                <input type="submit" value="Submit" name="submit" />    
+                <button type="button" value="Submit" class="btn btn-warning">Submit</button> 
+              </form>
+        </div>';
   }
 
-  echo '<p style="text-align:center"><a href="admin.php">&lt;&lt; Back to admin page</a></p>';
-  
-    
-  require_once "footer.php";
+  echo '<div class="container alert alert-info">
+          <a href="admin.php">Back to admin page</a>
+        </div>';
 ?>

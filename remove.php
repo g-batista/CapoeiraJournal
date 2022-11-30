@@ -12,7 +12,7 @@ require_once  "system.php";
   }
  
   else {
-    echo '<p class="error">Sorry, no value was specified for removal.</p>';
+    echo '<div class="alert alert-danger container h3">Sorry, no value was specified for removal.</div>';
   }
 
   if (isset($_POST['submit'])) {
@@ -24,23 +24,30 @@ require_once  "system.php";
       mysqli_close($dbc);
 
       // Confirm success with the user
-      echo '<p>The comment was successfully removed.</p>';
+      echo '<div class=" alert alert-success container h3">The comment was successfully removed.</div>';
     }
     else {
-      echo '<p class="error">The message was not removed.</p>';
+      echo '<div class="alert alert-danger h3 container">The message was not removed.</div>';
     }
   }
   else{
-    echo '<p>Are you sure you want to delete this comment?</p>';
-    echo '<form method="post" action="">';
-    echo '<input type="radio" name="confirm" value="Yes" /> Yes ';
-    echo '<input type="radio" name="confirm" value="No" checked="checked" /> No <br />';
-    echo '<input type="submit" value="Submit" name="submit" />';
-    echo '</form>';
+    echo '<div class="alert alert-danger h3 container">
+              Are you sure you want to delete this comment?
+          </div>
+          <div class="container bg-info">
+            <form method="post" action="" class="form-group">
+              <input type="radio" name="confirm" value="Yes" /> Yes
+              <input type="radio" name="confirm" value="No" checked="checked" /> No 
+              <br />
+              <input type="submit" value="Submit" name="submit" />
+              <button type="button" value="Submit" class="btn btn-warning">Submit</button>
+            </form>
+          </div>';
   }
 
-  echo '<p><a href="admin.php">&lt;&lt; Back to admin page</a></p>';
+  echo '<div class="alert alert-warining h3 container">
+          <a href="admin.php">Back to admin page</a>
+        </div>';
   
     require_once "footer.php";
-
 ?>

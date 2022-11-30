@@ -22,16 +22,13 @@ html {
 
 #home:first-letter{
 	font-family: Georgia;
-	font-size: 25px;
 	color:white;
 	float: left;
 	font-family: Georgia;
-	font-size: 100px;
-	line-height: 60px;
-	padding-top: 4px;
+	font-size: 65px;
+	line-height: 10px;
 	padding-right:0;
-	padding-left: 3px;
-	initial-letter: 3;
+	initial-letter: 1;
 }
 
 h2,h3,h4,p {
@@ -67,6 +64,23 @@ p {
 	text-align: center;
 	color: #FFEB3B;
   } */
+  .menu-trasitio{
+	background: repeating-radial-gradient(
+		circle,
+		yellow 0px,
+		black 5px,
+		rgba(255, 213, 0, 0.935) 5.5px,
+		rgba(0, 0, 0, 0.687) 6px,
+		rgba(255, 213, 0, 0.935) 6.5px,
+		rgba(0, 0, 0, 0.687) 7px,
+		rgba(255, 213, 0, 0.935) 7.5px,
+		rgba(0, 0, 0, 0.687) 8px
+
+	);
+	
+
+}
+
   @media print {  
 	.header { 
 	  position: static;

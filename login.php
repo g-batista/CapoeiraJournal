@@ -57,8 +57,8 @@ session_start();
                       </h4>
                   </div>
                   <div class="card-body">
-                      <h5 class="card-title">
-                          Welcome to Capoeira Jornal
+                      <h5 class="card-title text-success">
+                          Welcome to Capoeira Journal!
                       </h5>
                       <br />
                       <a href="index.php" class="btn btn-warning btn-outline-dark">
@@ -77,44 +77,45 @@ session_start();
 ?>
 
 <div class="mt-3 container col-md-6 col">
-  <form method="post" 
+  <form 
+        method="post" 
         class="bg-light"
-        action="<?php echo $_SERVER['PHP_SELF']; ?>"
-  >
-      <div class="form-group row justify-content-center">
-        <label for="username" class="col-sm-2 col-form-label mt-3">Username:</label>
-          <div class="col-sm-10 col-md-3">
+        action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        
+      <div class="form-group row justify-content-center h5">
+        <label for="username" class=" col-form-label mt-2">Username:</label>
+          <div class="col-md-3 m-2">
             <input
             id="username" 
             autofocus
             type="text"
             name="username"
-            class="form-control mt-3"
+            class="form-control"
             placeholder="Enter your username"
-            value="<?php if (!empty($user_username)) echo $user_username; ?>"
-            />
+            required
+            value="<?php if (!empty($user_username)) echo $user_username; ?>"/>
           </div>
-        </div>
-        <div class="form-group row justify-content-center ">
-        <label for="password" class="col-sm-2 col-form-label">Password: </label>
-        <div class="col-sm-10 col-md-3">
+      </div>
+      <div class="form-group row justify-content-center h5">
+        <label for="password" class="col-form-label">Password: </label>
+        <div class="col-md-3 m-2">
           <input 
               id="password" 
               type="password" 
               name="password" 
               class="form-control" 
               value="" 
-              placeholder="Password"
-          >
+              required
+              placeholder="Password">
         </div>
-      </div>
+      </div>  
       <div class="form-group row justify-content-center">
-        <div class="col-sm-10 col-md-3 mb-4">
+        <div class="col-md-3 mb-3 text-center">
           <button type="submit" 
                   class="btn btn-outline-dark btn-warning"
                   value="Log In" 
                   name="submit">
-            Submit
+              Submit
           </button>
         </div>
       </div>

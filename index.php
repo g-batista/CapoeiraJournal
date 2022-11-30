@@ -18,11 +18,15 @@
         
         $search = $_POST['search'];
         $where_search="and title like '%{$search}%' or username like '%{$search}%'"; 
+
         //hide element
-        echo '<style>
-        div.hideMypost {
-            display: none;        }
-        </style>';         
+        echo '
+            <style>
+            div.hideMypost {
+                display: none
+            }
+            </style>
+            ';         
     }
  
     else{
@@ -33,21 +37,23 @@
     require_once "header.php";
         
  ?>
-<!-- go to top button -->
+<!-- go to top button & display only on md-lg -->
 <a    
     href="#top" 
-    class="float">
+    class="float d-none d-md-block">
     &#8593;
 </a>
+<div class="container my-2 hideMypost">
 
-    <div class="mt-4 hideMypost container"
-         style="background-color:black"> 
+    <div
+        class="p-3" 
+        style="background-color:black"> 
         <p  id="home">
-               Welcome to Capoeira Journal! Here everyone can give a contribution to the capoeira world.
-               From a newb to a Capoeira master, you can make difference! 
+            Welcome to Capoeira Journal! Here everyone can give a contribution to the capoeira world.
+            From a newb to a Capoeira master, you can make difference! 
         </p>
     </div>
- 
+</div>
  <?php 
 
     if(!empty($_SESSION['user_id'])) {
@@ -92,60 +98,81 @@
     //show message if nothig found.
     if(mysqli_num_rows($posts)==0) {
         echo' 
-            <div class="card-body alert alert-danger container mt-3 text-center col-md-6">
-                <h5 class="card-title">Search not found!</h5>
-                <a href="add.php" class="btn btn-outline-dark btn-warning"">Add Post</a>
-                <a href="search.php" class="btn btn-outline-dark btn-warning"">Search Again</a>
+            <div class="container mx-auto">
+                
+                <div class="card-body alert alert-danger mt-3 text-center col-md">
+                    <h5 class="card-title">Search not found!</h5>
+                    <a href="add.php" class="btn btn-outline-dark btn-warning"">Add Post</a>
+                    <a href="search.php" class="btn btn-outline-dark btn-warning"">Search Again</a>
+                </div>
             </div>
+
         ';
     }
    
     //loop on the query and echo comment
      while ($post = mysqli_fetch_assoc($posts)) {
-
-            echo '<div  id="card" 
-                        class="card mt-3 container"
+            echo '
+                <div class="container">
+                    <div  
+                        id="card" 
+                        class="card my-3"
                         style="border-color: yellow;
                         border-style:solid;
-                        border-width: 3px;"
-                    >';
+                        border-width: 1px;">
 
-                echo'<div class="card-body">';
-            
-                    echo '<h4 style="text-align:center">
-                           <strong>'.$post['title'].'</strong>
-                          </h4>';
+                        <div class="card-body">
 
-                    echo '<p>
-                            <small class="text-muted">Posted: '.$post['date'].'</small><br/>
-                            <small class="text-muted">Autor: '.$post['username'].'</small>
-                          </p></br>';
+                            <h4 style="text-align:center">
+                                <strong>'.$post['title'].'</strong>
+                            </h4>
 
-                    echo '<div id="back">
-                            <img  class="rounded mx-auto d-block"
-                                  width = "40%" height="" class="img-fluid"  
-                                  src="pictures/'.$post['picture'].'">
-                          </div>
-                          <br/>';
+                            <p>
+                                <small class="text-muted">Posted: '.$post['date'].'</small><br/>
+                                <small class="text-muted">Autor: '.$post['username'].'</small>
+                            </p>
+
+                            <div id="back row">
+                                <img  
+                                class="rounded mx-auto d-block mb-3 img-fluid col-md-6 col-sm"
+                                
+                                src="pictures/'.$post['picture'].'">
+                            </div>
+                ';
 
             //Edit & comment
             if($user_id == $post['user_id']){
-                    echo '<a class="nav-link" id="index-tab" href="editcomment.php?id='.$post['id'].'" aria-selected="false">Edit Post</a>';
-                    echo '<a class="nav-link" id="index-tab" href="deleteComment.php?id='.$post['id'].'" aria-selected="false">Delete</a>';
+                            echo '
+                                <div>
+                                    <a  
+                                        class="nav-link" 
+                                        id="index-tab" 
+                                        href="editcomment.php?id='.$post['id'].'" 
+                                        aria-selected="false">
+                                        Edit Post
+                                    </a>
+                                    <a 
+                                        class="nav-link" 
+                                        id="index-tab" 
+                                        href="deleteComment.php?id='.$post['id'].'" 
+                                        aria-selected="false">
+                                        Delete
+                                    </a>
+                                </div>
+                                ';
             }
-
-                echo '<div
-                        style="border-color: #fff3b2;
-                        border-style:solid;
-                        border-width: 2px;
-                        padding: 30px;"
-                    >
-                        <p class="text-left">&emsp; '.$post['msg'].'<p>
-                    </div>';
-                echo '</div></br>';
-                echo'</div>';
-             echo '<div>
-             </br>';
+                            echo '
+                                <div
+                                    style="border-color: #fff3b2;
+                                    border-style:solid;
+                                    border-width: 1px;
+                                    class="">
+                                    <p class="text-left p-2">&emsp; '.$post['msg'].' test<p>
+                                </div>
+                        </div>
+                    </div>
+                </div>                    
+            ';
     } 
 
    mysqli_close($dbc);
