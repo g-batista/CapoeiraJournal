@@ -7,51 +7,60 @@
 
 
   echo'
-      <h4 class="container alert alert-warning col-4 text-center mt-3">
-        <a href="userreport.php" class="text-dark">
-          User Report Path
-        </a>
-      </h4>';
+      <div class="container d-flex justify-content-center">
+        <h4 class="alert alert-danger col-md-4 text-center mt-3">
+          <a href="userreport.php" class="text-dark">
+          &#10132; User Report Path
+          </a>
+        </h4>
+      </div>
+      ';
 
   // Retrieve the information data from MySQL
   $query = "SELECT * FROM comments ORDER BY date DESC";
   $data = mysqli_query($dbc, $query);
   
  
-
-  // Loop through the array data, formatting it as HTML 
+  while ($row = mysqli_fetch_array($data)) { 
+    // Loop through the array data, formatting it as HTML 
   echo '
       <div class="container">
-        <table class= "table table-bordered table-warning table-responsive-sm">
-          <thead>
-            <tr>
-              <th scope="col">Title</th>
-              <th scope="col">Date</th>
-              <th scope="col">Message</th>
-              <th scope="col">Remove?</th>
-              <th scope="col">Aprove?</th>
+        <table class="table table-warning table-responsive">
+          <thead class="thead-light text-center border border-dark">
+            <tr class="">
+              <th class="border border-dark" scope="col border border-dark">Title</th>
+              <th class="border border-dark" scope="col">Date</th>
+              <th class="border border-dark" scope="col">Message</th>
+              <th class="border border-dark" scope="col">Remove?</th>
+              <th class="border border-dark" scope="col">Aprove?</th>
             </tr>
           </thead>
         ';
-  while ($row = mysqli_fetch_array($data)) { 
-    
     //Display the score data
-    echo '<tr class="">
-          <td>' . $row['title'] . '</td>
-          <td>' . $row['date'] . '</td>
-          <td>' . $row['msg'] . '</td>
-
-        <td><a class="text-danger" href="remove.php?id=' . $row['id']. '">Remove</a></td>';
+    echo '
+        <tbody class="border border-dark">
+          <tr class="border border-dark" scope="row">
+            <td class="col-1 border border-dark">' . $row['title'] . '</td>
+            <td class="col-1 border border-dark">' . $row['date'] . '</td>
+            <td class="border border-dark">' . $row['msg'] . '</td>
+            <td class="col-1 border border-dark">
+              <a class="text-danger" href="remove.php?id=' . $row['id']. '"> 
+                Remove
+              </a>
+            </td>';
 
     if ($row['approved'] == '0') {
-      echo '<td><a class="text-success" href="approvepost.php?id=' . $row['id'] .'">Approve</a></td>';
+        echo '<td class="col-1">
+                <a class="text-success" href="approvepost.php?id=' . $row['id'] .'">
+                  Approve
+                </a>
+              </td>';
+    }
+      echo '</tr>
+        </tbody>';
   }
-  echo '</tr>';
-
-  }
-  
-  echo '</table>
-     </div>';
+   echo '</table>
+      </div>';
   
   mysqli_close($dbc);
 ?>

@@ -12,7 +12,12 @@ require_once  "system.php";
   }
  
   else {
-    echo '<div class="alert alert-danger container h3">Sorry, no value was specified for removal.</div>';
+    echo '
+    <div class="container">
+      <div class="alert alert-danger container h3">
+          Sorry, no value was specified for removal.
+      </div>
+    </div>';
   }
 
   if (isset($_POST['submit'])) {
@@ -24,30 +29,44 @@ require_once  "system.php";
       mysqli_close($dbc);
 
       // Confirm success with the user
-      echo '<div class=" alert alert-success container h3">The comment was successfully removed.</div>';
+      echo '
+      <div class="container">
+        <div class=" alert alert-success h3 text-center">
+          The comment was successfully removed.
+        </div>
+      </div>';
     }
     else {
-      echo '<div class="alert alert-danger h3 container">The message was not removed.</div>';
+      echo '
+      <div class="container mt-3 text-center">
+        <div class="alert alert-danger h3 container">
+          The message was not removed.
+        </div>
+      </div>';
     }
   }
   else{
-    echo '<div class="alert alert-danger h3 container">
+    echo '
+    <div class="container">
+        <div class="alert alert-danger h3 mt-3 text-center">
               Are you sure you want to delete this comment?
-          </div>
-          <div class="container bg-info">
-            <form method="post" action="" class="form-group">
+        </div>
+          <div class="alert alert-info text-center col-6 container pt-3">
+            <form method="post" action="" class="form-group pb-3 h4">
               <input type="radio" name="confirm" value="Yes" /> Yes
-              <input type="radio" name="confirm" value="No" checked="checked" /> No 
+              <input  type="radio" name="confirm" value="No" checked="checked" /> No 
               <br />
-              <input type="submit" value="Submit" name="submit" />
-              <button type="button" value="Submit" class="btn btn-warning">Submit</button>
+              <button  type="submit" value="Submit" name="submit" class="btn btn-warning mt-3">
+                Submit
+              </button>
             </form>
-          </div>';
+          </div>
+    </div>  
+    ';
   }
 
-  echo '<div class="alert alert-warining h3 container">
-          <a href="admin.php">Back to admin page</a>
-        </div>';
-  
-    require_once "footer.php";
-?>
+  echo '
+  <div class="container text-center alert alert-warning col-6 h3" >
+      <a href="admin.php">Back to admin page</a>
+  </div>';
+  ?>

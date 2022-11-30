@@ -63,13 +63,13 @@ if (isset($_POST ['submit'])) {
     echo '
     <div class="container">
         <div class="alert alert-danger mt-4  text-center h4">
-            Are you sure you want to delete your comment?
+            Do you want to <i class="h2">delete</i> this comment?
             <form method="post" action="" class="h3">
                 <input type="radio" name="confirm" value="Yes" /> Yes
                 <input type="radio" name="confirm" value="No" checked="checked" /> No
                 <br />
                 <br />
-                <button type="submit" value="Submit" name="submit" class="btn btn-warning ">
+                <button type="submit" value="Submit" name="submit" class="btn btn-danger ">
                     Submit
                 </button>
             </form>

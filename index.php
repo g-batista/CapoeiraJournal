@@ -145,14 +145,14 @@
                             echo '
                                 <div>
                                     <a  
-                                        class="nav-link" 
+                                        class="nav-link text-success" 
                                         id="index-tab" 
                                         href="editcomment.php?id='.$post['id'].'" 
                                         aria-selected="false">
                                         Edit Post
                                     </a>
                                     <a 
-                                        class="nav-link" 
+                                        class="nav-link text-danger" 
                                         id="index-tab" 
                                         href="deleteComment.php?id='.$post['id'].'" 
                                         aria-selected="false">

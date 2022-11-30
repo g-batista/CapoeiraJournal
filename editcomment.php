@@ -31,17 +31,19 @@ $id= $_GET['id'];
           or die('Error querying database.');
          
           echo '
-              <h4 class="alert alert-success container mt-3 text-center">
-                Menssage updated with success.
-                <strong class="text-success text-uppercase">&#9888;</strong>
-                <br />
-                We will review and add to the home page immediately!
-                <br />
-                <div class="mt-3">
-                  <a href="add.php" class="btn btn-outline-dark btn-warning"">Add New Post</a>
-                  <a href="index.php" class="btn btn-outline-dark btn-warning"">Home</a>                
-                </div>
-              </h4>    
+          <div class="container mt-3">
+            <h4 class="alert alert-success text-center">
+              Menssage updated with success.
+              <strong class="text-success text-uppercase">&#9888;</strong>
+              <br />
+              We will review and add to the home page immediately!
+              <br />
+              <div class="mt-3">
+                <a href="add.php" class="btn btn-outline-dark btn-warning"">Add New Post</a>
+                <a href="index.php" class="btn btn-outline-dark btn-warning"">Home</a>                
+              </div>
+            </h4> 
+          </div>   
           ';         
       }
 
@@ -81,71 +83,60 @@ $id= $_GET['id'];
  }    
  if ($displayForm){
  ?>
+<div class="container">
 
-  <form 
-        method="post" 
-        class="container col-md-6"
-        action=""
-        style="background-color:#FFFF8F"
-
-      >
-    <h4 class="form-group row justify-content-center text-dark mt-3">
-        Edit Comment
-    </h4>
-    <div class="form-group text-center ">
-      <label for="title" 
-             class=""
-            >
-            Eddit title:
-      </label>    
-      <div>
-        <input
-              id="title"
-              autofocus
-              required
-              type="text"  
-              name="title" 
-              class="from-control text-center"
-              value="<?php echo $comment['title'];?>"
-             />
-      </div>
+<form 
+  method="post" 
+  class="container col-md-6"
+  action=""
+  style="background-color:#FFFF8F">
+  <h4 class="form-group row justify-content-center text-dark mt-3 pt-2">
+      Edit Comment
+  </h4>
+  <div class="form-group text-center ">
+    <label for="title">
+          Eddit title:
+    </label>    
+    <div>
+      <input
+            id="title"
+            autofocus
+            required
+            type="text"  
+            name="title" 
+            class="from-control text-center"
+            value="<?php echo $comment['title'];?>"/>
     </div>
-    
-    <div class="form-group text-center">
-      <label for="text">Eddit you text here:</label>
-      <textarea 
-                id="text"
-                class="form-control" 
-                rows="5" 
-                name="msg" 
-                value=""
-                required><?php echo $comment['msg'];?></textarea>
-    </div> 
+  </div>
+  
+  <div class="form-group text-center">
+    <label for="text">Eddit you text here:</label>
+    <textarea 
+              id="text"
+              class="form-control" 
+              rows="5" 
+              name="msg" 
+              value=""
+              required><?php echo $comment['msg'];?></textarea>
+  </div> 
 
-    <div class="form-group row justify-content-center">
-      <div class="mb-4">
-        <button type="submit" 
-                class="btn btn-outline-dark btn-warning"
-                value="submit Form" 
-                name="submit">
-          Submit
-        </button>
-      </div>
+  <div class="form-group row justify-content-center">
+    <div class="mb-4">
+      <button type="submit" 
+              class="btn btn-outline-dark btn-warning"
+              value="submit Form" 
+              name="submit">
+        Submit
+      </button>
+      <a class="btn btn-danger" href="index.php" role="button">Cancel</a>
     </div>
+  </div>
+</form>
+</div>
 
-   
-    <!-- <input type="submit" value="Submit Form" name="submit" /> -->
-  </form>
 <?php
  }
 ?>
-
-
-
-
-
-
-
 
 <?php 
 require_once "footer.php";

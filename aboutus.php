@@ -58,8 +58,8 @@
         </h1>
         <p id="home" id="tab" class="card-text p-3"> 
             &nbsp; Capoeira is an afro-Brazilian art that is intended to enrich all instances of life.
-            <br> &nbsp;&nbsp;Capoeira is a fight, a dance, and a body game. 
-            <br>&nbsp;&nbsp;In this web site, you or your capoeira group will find the keys to connect to other groups, share the capoeira philosophy, and learn about all subjects of capoeira at all levels. The content is all made by the community/users and the posts will be checked to make sure the content is appropriate. 
+            <br> &nbsp;&nbsp;&nbsp;Capoeira is a fight, a dance, and a body game. 
+            <br>&nbsp;&nbsp;&nbsp;In this web site, you or your capoeira group will find the keys to connect to other groups, share the capoeira philosophy, and learn about all subjects of capoeira at all levels. The content is all made by the community/users and the posts will be checked to make sure the content is appropriate. 
             <br>&nbsp;Finnaly, the main objectve is to connect the capoeristas and suport the world wide capoeira grupo.
             Give and take the best of capoira life is here now!<br>
         </p>

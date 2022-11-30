@@ -23,11 +23,7 @@ html {
 #home:first-letter{
 	font-family: Georgia;
 	color:white;
-	float: left;
-	font-family: Georgia;
-	font-size: 65px;
-	line-height: 10px;
-	padding-right:0;
+	font-size: 55px;
 	initial-letter: 1;
 }
 
@@ -38,10 +34,10 @@ h2,h3,h4,p {
 label {
 	font-family: Georgia;
 	color:black;
-	font-size: 25px;
+	font-size: 22px;
 }
 p {
-	font-size: 20px;
+	font-size: 24px;
 }
 
 
