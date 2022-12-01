@@ -47,22 +47,12 @@
                 aria-expanded="false" 
                 aria-label="Toggle navigation"
                 style=" height: 55px; width: 65px;">
-            <span class="">
-            <!-- style=" background-image: url(pictures/logo-1.png) -->
-            
-            
-            
-            <!-- background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e); 
-          -->
-            </span>
         </button>
+
       <div class="collapse navbar-collapse" id="navbar">
           <ul class="d-md-flex ml-auto nav-bar-nav list-unstyled p-3 m-1">
                   <li class="nav-item active">
                     <a class="nav-link text-white" href="index.php" aria-controls="profile" aria-selected="false">Home</a>
-                  </li>
-                  <li class="nav-item ">
-                    <a class="nav-link text-white" href="add.php" aria-controls="contact" aria-selected="false">Add Post</a>
                   </li>
 
                   <?php
@@ -87,6 +77,10 @@
                             href="logout.php" aria-controls="profile" aria-selected="false">Logout </a>
                           </li>
 
+                          <li class="nav-item ">
+                            <a class="nav-link text-white" href="add.php" aria-controls="contact" aria-selected="false">Add Post</a>
+                          </li>      
+
                           <li class="nav-item">
                             <a class="nav-link text-white" id="index-tab" href="index.php?mycomments"aria-controls="profile" aria-selected="false">My Comments</a>
                           </li>
@@ -101,7 +95,5 @@
                   </li>
             </ul>
       </div>
-      <!-- class="mx-auto"  -->
-
     </nav>
 </div>

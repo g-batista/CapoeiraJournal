@@ -29,15 +29,15 @@ require_once "header.php";
                     <thead class="thead-dark h5"> 
                         <tr>
                             <th scope="col">Email</th>
-                            <th scope="col">Message</th>
                             <th scope="col"> &#35;</th>
+                            <th scope="col">Message</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="table-secondary" scope="row">
                             <td class="col-md-4"> ' . $report['email'] . '</td>
+                            <td class="col-md-0"> ' . $report['ex'] . '</td>
                             <td class="col"> ' . $report['text'] . '</td>
-                            <td class="col-md-1"> ' . $report['ex'] . '</td>
                         </tr>
                     </tbody>
                 </table>

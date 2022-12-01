@@ -43,14 +43,14 @@
             <td class="col-1 border border-dark">' . $row['title'] . '</td>
             <td class="col-1 border border-dark">' . $row['date'] . '</td>
             <td class="border border-dark">' . $row['msg'] . '</td>
-            <td class="col-1 border border-dark">
+            <td class="border border-dark">
               <a class="text-danger" href="remove.php?id=' . $row['id']. '"> 
                 Remove
               </a>
             </td>';
 
     if ($row['approved'] == '0') {
-        echo '<td class="col-1">
+        echo '<td class="">
                 <a class="text-success" href="approvepost.php?id=' . $row['id'] .'">
                   Approve
                 </a>

@@ -70,10 +70,11 @@
         style="width: 500px; background-color:#FFFF8F">
 
         <h3 class="col text-center mt-3"><strong class="text-dark">Contact US</strong></h3>
-        <form method="post" class="">
+
+        <form method="post">
             <div class="form-group">
-            <label for="email">Email address:</label>
-            <input required type="text" class="form-control" id="exampleFormControlInput1" placeholder="capoeiraJournal@user.com" name="email">
+                <label for="email">Email address:</label>
+                <input required type="text" class="form-control" id="exampleFormControlInput1" placeholder="capoeiraJournal@user.com" name="email">
             </div>
 
             <div class="form-group">
