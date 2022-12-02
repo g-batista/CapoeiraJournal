@@ -67,9 +67,6 @@
         $user_id = 0;
     }
 
-    //if "mycomments" inside browser address
-    // index.php?mycomments
-
     //get paramether 
     if(isset($_GET['mycomments'])) {
 
@@ -135,31 +132,30 @@
                             <div id="back row">
                                 <img  
                                 class="rounded mx-auto d-block mb-3 img-fluid col-md-6 col-sm"
-                                
                                 src="pictures/'.$post['picture'].'">
                             </div>
                 ';
 
             //Edit & comment
             if($user_id == $post['user_id']){
-                            echo '
-                                <div>
-                                    <a  
-                                        class="nav-link text-success" 
-                                        id="index-tab" 
-                                        href="editcomment.php?id='.$post['id'].'" 
-                                        aria-selected="false">
-                                        Edit Post
-                                    </a>
-                                    <a 
-                                        class="nav-link text-danger" 
-                                        id="index-tab" 
-                                        href="deleteComment.php?id='.$post['id'].'" 
-                                        aria-selected="false">
-                                        Delete
-                                    </a>
-                                </div>
-                                ';
+                echo '
+                    <div>
+                        <a  
+                            class="nav-link text-success" 
+                            id="index-tab" 
+                            href="editcomment.php?id='.$post['id'].'" 
+                            aria-selected="false">
+                            Edit Post
+                        </a>
+                        <a 
+                            class="nav-link text-danger" 
+                            id="index-tab" 
+                            href="deleteComment.php?id='.$post['id'].'" 
+                            aria-selected="false">
+                            Delete
+                        </a>
+                    </div>
+                    ';
             }
                             echo '
                                 <div

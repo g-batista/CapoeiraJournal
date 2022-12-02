@@ -19,9 +19,9 @@
   // Retrieve the information data from MySQL
   $query = "SELECT * FROM comments ORDER BY date DESC";
   $data = mysqli_query($dbc, $query);
-  
- 
-  while ($row = mysqli_fetch_array($data)) { 
+
+
+  while ($row = mysqli_fetch_assoc($data)) { 
     // Loop through the array data, formatting it as HTML 
   echo '
       <div class="container">
@@ -31,9 +31,16 @@
               <th class="border border-dark" scope="col border border-dark">Title</th>
               <th class="border border-dark" scope="col">Date</th>
               <th class="border border-dark" scope="col">Message</th>
+              <th class="border border-dark" scope="col">Picture</th>
               <th class="border border-dark" scope="col">Remove?</th>
-              <th class="border border-dark" scope="col">Aprove?</th>
-            </tr>
+              ';
+              
+              if ($row['approved'] == '0') {
+                echo '
+                <th class="border border-dark" scope="col">Aprove?</th>
+                ';
+              }
+      echo' </tr>
           </thead>
         ';
     //Display the score data
@@ -43,14 +50,19 @@
             <td class="col-1 border border-dark">' . $row['title'] . '</td>
             <td class="col-1 border border-dark">' . $row['date'] . '</td>
             <td class="border border-dark">' . $row['msg'] . '</td>
-            <td class="border border-dark">
+            <td class="col-3 justify-content-center">
+             <img class="img-fluid"
+                 src="pictures/'.$row['picture'].'">
+            </td>
+            
+            <td class="border border-dark col-1">
               <a class="text-danger" href="remove.php?id=' . $row['id']. '"> 
                 Remove
               </a>
             </td>';
 
     if ($row['approved'] == '0') {
-        echo '<td class="">
+        echo '<td class="col-1">
                 <a class="text-success" href="approvepost.php?id=' . $row['id'] .'">
                   Approve
                 </a>
