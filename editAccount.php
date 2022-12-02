@@ -93,7 +93,7 @@ if ($_POST) {
 ?>
     <form 
       id="form" 
-      class="container mt-3 col-4 bg-warning hideForm" 
+      class="container my-3 col-4 bg-warning hideForm border border-dark" 
       method="post" 
       action="">
       <div class="form-group row">   

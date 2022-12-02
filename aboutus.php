@@ -19,8 +19,8 @@
 
             echo '
 
-                <div class="container">
-                    <div class="alert alert-success text-center mt-3 h4" role="alert">
+                <div class="container ">
+                    <div class="alert alert-success border border-dark text-center mt-3 h4" role="alert">
                         <h1>Thank You!</h1>
                         Your contribution was successfuly submited!
                         <br />
@@ -34,7 +34,7 @@
                     </div>
                 </div> 
                 <style>
-                    div.hideForm {
+                    .hideContent {
                     display: none;
                 </style>
                 ';
@@ -43,15 +43,15 @@
             }
         }
 ?>
- <div class="container row mx-auto d-flex justify-content-center">
+ <div class="container">
 
-    <div class="my-3"> 
+    <div class="my-3 hideContent col-md-9 container"> 
         <img src="pictures/logo.png" 
-                class="img-fluid" 
+                class="img-fluid col-md-12 border border-warning p-0" 
                 alt="Capoeira Journal oficial logo">
-    </div>
 
-    <div class="card bg-info hideForm col-md-9 container ">
+</div>
+    <div class="card bg-info hideContent col-md-9 container border border-dark ">
         <h1 style="text-align:center"
             class="card-title">
           Our Mission
@@ -66,8 +66,8 @@
     </div>
 
     <div  
-        class="mx-auto mb-3 mt-3  text-center hideForm container"      
-        style="width: 500px; background-color:#FFFF8F">
+        class="mx-auto mb-3 mt-3  text-center hideContent container border border-dark col-md-7"      
+        style="background-color:#FFFF8F">
 
         <h3 class="col text-center mt-3"><strong class="text-dark">Contact US</strong></h3>
 

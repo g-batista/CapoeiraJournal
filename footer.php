@@ -2,7 +2,7 @@
 <footer class="container">
 
   <!-- this -->
-  <div class="card text-center mb-2">
+  <div class="card text-center mb-2 border border-dark">
     <div 
       class="card-footer text-muted d-flex justify-content-between align-items-center">
       <span 
@@ -44,7 +44,7 @@
           </a>
           <br />
           <a 
-              href="UserDelete.php"
+              href="userDelete.php"
               class="btn btn-danger btn-outline-light badge mr-2 align-self-center">
               Delete Account
           </a>

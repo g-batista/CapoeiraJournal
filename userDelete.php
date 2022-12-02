@@ -7,7 +7,7 @@ require_once  "system.php";
 if (!isset($_SESSION['user_id'])) {
     echo '
     <div class="container">
-      <div class="alert alert-danger text-center mt-3 h4" role="alert">
+      <div class="alert alert-danger text-center mt-3 h4 border border-dark" role="alert">
         Please <a  class="alert-link" href="login.php">login</a> to access this page!
       </div>
     </div>  
@@ -33,11 +33,11 @@ if (!isset($_SESSION['user_id'])) {
 
         // Confirm success delete user
         echo '
-            <div calss="container">
+            <div class="container border border-dark">
                 <div class="alert alert-success text-center mt-3 h4" role="alert">
                     Your account was successfully removed!
                 </div>
-                <div class="card-body alert alert-warning container text-center mt-3 h4">
+                <div class="card-body alert alert-warning container text-center mt-3 h4 border border-dark">
                   <h5 class="card-title">Go here to create new account!</h5>
                   <a href="register.php" class="btn btn-outline-dark btn-warning"">New Account</a>
                 </div>
@@ -51,11 +51,11 @@ if (!isset($_SESSION['user_id'])) {
       echo '
             <div class="container">
                 <div 
-                    class="alert alert-danger  text-center mt-3 h4" role="alert">
+                    class="alert alert-danger  text-center mt-3 h4 border border-dark" role="alert">
                     Account was <strong>NOT</strong> removed!
                 </div>
                 <div 
-                    class="card-body  alert alert-info  text-center mt-3 h4">
+                    class="card-body  alert alert-info  text-center mt-3 h4 border border-dark">
                   <h5 class="card-title">Check the new Capoeira Journals</h5>
                   <a href="index.php" class="btn btn-outline-dark btn-warning"">Home</a>
                 </div>
@@ -67,7 +67,7 @@ if (!isset($_SESSION['user_id'])) {
   else{
     echo '
     <div class="container">
-        <div class="alert alert-danger mt-4  text-center h4">
+        <div class="alert alert-danger mt-4  text-center h4 border border-dark">
             Are you sure you want to delete your account?
             <form method="post" action="" class="h3">
                 <input type="radio" name="confirm" value="Yes" /> Yes

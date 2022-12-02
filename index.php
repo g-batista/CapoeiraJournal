@@ -46,7 +46,7 @@
 <div class="container my-2 hideMypost">
 
     <div
-        class="p-3" 
+        class="p-3 border border-warning" 
         style="background-color:black"> 
         <p  id="home">
             Welcome to Capoeira Journal! Here everyone can give a contribution to the capoeira world.
@@ -131,7 +131,7 @@
 
                             <div id="back row">
                                 <img  
-                                class="rounded mx-auto d-block mb-3 img-fluid col-md-6 col-sm"
+                                class="rounded mx-auto d-block mb-3 img-fluid col-md-6 col-sm border border-warning p-0"
                                 src="pictures/'.$post['picture'].'">
                             </div>
                 ';

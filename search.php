@@ -5,10 +5,10 @@ $title = "Search";
 require_once "header.php";
 ?>
 
-<div class="mt-3 container">
+<div class="my-3 container">
   <form
       method="post" 
-      class="bg-light"
+      class="bg-light border border-dark"
       action="index.php">
 
     <h4 class="form-group text-center text-dark mt-3 pt-3">
