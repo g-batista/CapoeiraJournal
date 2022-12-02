@@ -12,7 +12,7 @@
         </style>';
     }
     else{
-        $title = "Capoeira";
+        $title = "Capoeira Journal";
     }
     if(isset($_POST['search'])){
         
@@ -88,9 +88,10 @@
                                      FROM comments
                                      INNER JOIN journal_user 
                                      ON comments.user_id = journal_user.id
-                                     WHERE approved =1 $where_search
+                                     WHERE approved =1 $where_search 
+                                     and approved =1
                                      ORDER BY date DESC");    
-
+                                    // and title like '%{$search}%' or username like '%{$search}%'"
     }
     //show message if nothig found.
     if(mysqli_num_rows($posts)==0) {

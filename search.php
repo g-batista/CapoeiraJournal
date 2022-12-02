@@ -36,7 +36,7 @@ require_once "header.php";
       <div class="mb-4">
         <button type="submit" 
                 class="btn btn-outline-dark btn-warning"
-                value="" 
+                value="search" 
                 name="submit">
           Submit
         </button>
