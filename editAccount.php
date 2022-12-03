@@ -1,15 +1,15 @@
 <?php
   //concet to database
+require_once "header.php";
 require_once "system.php";
 $title = "Edit Account";
-require_once "header.php";
 
 if (!isset($_SESSION['user_id'])) {
   
   //Alert not login.
   echo '
         <div class="container">
-            <div class="alert alert-danger text-center mt-3 h4" role="alert">
+            <div class="alert alert-danger text-center mt-3 h4  border border-dark" role="alert">
                 Please <a  class="alert-link" href="login.php">login</a> to access this page!
             </div>
         </div>
@@ -45,38 +45,43 @@ if ($_POST) {
             or die('#1 Error querying database.');
             
             unset($_SESSION['user_id']);
-
+            
+            $_SESSION = array();
+            
             //success message
             echo '
-                  <div class="container">
-                      <div class="alert alert-success  text-center mt-3 h4">
-                          Successfully edit account!
-                          <br />
-                          Add a <a  class="alert-link" href="add.php">New post</a>
-                          Or Visete the <a class="alert-link" href=".php">Home</a> page. 
-                      </div>
-
-                      <div class="alert alert-danger  text-center mt-3 h4" role="alert">
-                          Please <a  class="alert-link" href="login.php">login</a> again to access this page!
-                      </div>
-                  </div>
-
-                  <style>
-                      form.hideForm {
-                      display: none;
-                  </style>
-                ';
-                $_SESSION = array();
+            <div class="container">
+            <div class="alert alert-success  text-center mt-3 h4 border border-dark">
+            Successfully edited account!
+            <br />
+            Vist the <a class="alert-link" href=".php">Home</a> page. 
+            </div>
+            
+            <div class="alert alert-danger  text-center mt-3 h4 border border-dark" role="alert">
+            Please <a  class="alert-link" href="login.php">login</a> again to access this page!
+            </div>
+            </div>
+            
+            <style>
+            form.hideForm {
+              display: none;
+              </style>
+              ';
+              require_once "header.php";
           } 
               
         else {
                // An account already exists for this username, so display an error message
                echo '
-                       <h4 class="alert alert-danger container mt-3">
-                           An account already exists for this 
-                           <strong class="text-danger text-uppercase">username</strong> 
-                               Please use a different user name.&#9888;
-                       </h4>
+                      <div class="container">
+                        <h4 class="alert alert-danger container mt-3 text-center border border-dark">
+                            An account already exists for this 
+                            <strong class="text-danger text-uppercase">username.</strong>
+                            <br />
+                                Please use a different user name.&#9888;
+                        </h4>
+                       </div>
+
                     ';
             }
     }
