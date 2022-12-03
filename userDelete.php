@@ -1,8 +1,8 @@
 
 <?php
+require_once  "system.php";
 $title = 'Delete User';
 require_once  "header.php";
-require_once  "system.php";
  
 if (!isset($_SESSION['user_id'])) {
     echo '
@@ -18,6 +18,7 @@ if (!isset($_SESSION['user_id'])) {
 
   if (isset($_POST['submit'])) {
     if ($_POST['confirm'] == 'Yes') {
+      
         $user_id=$_SESSION['user_id'];   
 
         // Delete the score data from the database

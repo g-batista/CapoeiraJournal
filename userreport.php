@@ -7,7 +7,7 @@ require_once "header.php";
 
     echo'
     <div class="container d-flex justify-content-center">
-    <h4 class="alert alert-danger col-md-4 text-center mt-3">
+    <h4 class="alert alert-danger col-md-4 text-center mt-3 border border-dark">
         <a href="admin.php" class="text-dark">
         &#10132; Admin Path
         </a>
@@ -24,9 +24,9 @@ require_once "header.php";
 
          
         echo'
-            <div class="container ">
+            <div class="container">
                 <table class="table table-bordered table-responsive-sm">
-                    <thead class="thead-dark h5"> 
+                    <thead class="thead-dark h5 "> 
                         <tr>
                             <th scope="col">Email</th>
                             <th scope="col"> &#35;</th>

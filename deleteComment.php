@@ -69,7 +69,7 @@ if (isset($_POST ['submit'])) {
                 <input type="radio" name="confirm" value="No" checked="checked" /> No
                 <br />
                 <br />
-                <button type="submit" value="Submit" name="submit" class="btn btn-danger ">
+                <button type="submit" value="submit" name="submit" class="btn btn-danger ">
                     Submit
                 </button>
             </form>

@@ -8,8 +8,8 @@
 
   echo'
       <div class="container d-flex justify-content-center">
-        <h4 class="alert alert-danger col-md-4 text-center mt-3">
-          <a href="userreport.php" class="text-dark">
+        <h4 class="alert alert-danger col-md-4 text-center mt-3 border border-dark">
+          <a href="userreport.php" class="text-dark ">
           &#10132; User Report Path
           </a>
         </h4>

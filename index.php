@@ -122,7 +122,7 @@
                         <div class="card-body">
 
                             <h4 style="text-align:center">
-                                <strong>'.$post['title'].'</strong>
+                                <strong  class="border-bottom border-warning">'.$post['title'].'</strong>
                             </h4>
 
                             <p>

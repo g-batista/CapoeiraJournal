@@ -16,7 +16,6 @@ if (!isset($_SESSION['user_id'])) {
       ';
 
   require_once "footer.php";
-
   exit();
 }
  
@@ -91,53 +90,91 @@ if ($_POST) {
     $user= mysqli_fetch_assoc($result);
 
 ?>
-    <form 
-      id="form" 
-      class="container my-3 col-4 bg-warning hideForm border border-dark" 
-      method="post" 
-      action="">
-      <div class="form-group row">   
-          <div class="col-4 mt-3">  
-            <label for="first_name" class="form-label">First name:</label>
-          </div>
-          <div class="col mt-3">
-              <input type="text" id="first_name" name="first_name" class="form-control" autofocus required value= "<?php echo $user['first_name'];?>" />
-          </div>   
-      </div>
+<div class="container">
+  <form 
+    id="form" 
+    class="container my-4 pb-2 col-md-4 bg-warning hideForm border border-dark" 
+    method="post" 
+    action="">
+    <div class="form-group row">   
+        <div class="col-4 mt-3">  
+          <label for="first_name" class="form-label">First name:</label>
+        </div>
+        <div class="col mt-3">
+            <input 
+              type="text" 
+              id="first_name" 
+              name="first_name" 
+              class="form-control" 
+              autofocus 
+              required 
+              value= "<?php echo $user['first_name'];?>" />
+        </div>   
+    </div>
 
-      <div class="form-group row">
-        <div class="col-4">
-          <label for="text"> Last Name:</label>
-        </div>
-        <div class="col">
-          <input type="text" id="last_name" name="last_name" class="form-control" value= "<?php echo $user['last_name'];?>" required />
-        </div>
+    <div class="form-group row">
+      <div class="col-4">
+        <label for="text"> Last Name:</label>
       </div>
+      <div class="col">
+        <input 
+          type="text" 
+          id="last_name" 
+          name="last_name" 
+          class="form-control" 
+          value= "<?php echo $user['last_name'];?>" 
+          required />
+      </div>
+    </div>
 
-      <div class="form-group row">
-        <div class="col-4">
-            <label for="text"> Username:</label>
-        </div>
-        <div class="col">
-            <input type="text" id="username" name="username" class="form-control" value= "<?php echo $user['username'];?>" required />
-        </div>
+    <div class="form-group row">
+      <div class="col-4">
+          <label for="text"> Username:</label>
       </div>
+      <div class="col">
+          <input 
+            type="text" 
+            id="username" 
+            name="username" 
+            class="form-control" 
+            value= "<?php echo $user['username'];?>" 
+            required />
+      </div>
+    </div>
 
-      <div class="form-group row">
-        <div class="col-4">
-          <label for="text">Password:</label>
-        </div>
-        <div class="col">
-          <input type="text" id="password" name="password" class="form-control" placeholder="New Password" required/>
-        </div>
+    <div class="form-group row">
+      <div class="col-4">
+        <label for="text">Password:</label>
       </div>
+      <div class="col">
+        <input 
+          type="text" 
+          id="password" 
+          name="password" 
+          class="form-control" 
+          placeholder="New Password" 
+          required/>
+      </div>
+    </div>
 
-      <div class="form-group row justify-content-center">
-        <button type="submit"  value="Submit Form" name="submit" class="btn btn-primary mb-3">
-            Submit
-        </button>
-      </div>
-    </form>
+    <div class="form-group row justify-content-center">
+      <button 
+          type="submit"  
+          value="Submit Form" 
+          name="submit" 
+          class="btn btn-success">
+          Submit
+      </button>
+      <a  type="button"  
+          value="button" 
+          name="button" 
+          class="btn btn-danger ml-2"
+          href="index.php">
+          Cancel
+      </a>
+    </div>
+  </form>
+</div>
 
 <?php mysqli_close($dbc);
 require_once "footer.php";

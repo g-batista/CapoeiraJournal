@@ -63,16 +63,17 @@ p {
   .menu-trasitio{
 	background: repeating-radial-gradient(
 		circle,
-		yellow 0px,
+		yellow 1px,
 		black 5px,
-		rgba(255, 213, 0, 0.935) 5.5px,
-		rgba(0, 0, 0, 0.687) 6px,
-		rgba(255, 213, 0, 0.935) 6.5px,
-		rgba(0, 0, 0, 0.687) 7px,
-		rgba(255, 213, 0, 0.935) 7.5px,
-		rgba(0, 0, 0, 0.687) 8px
-
-	);
+		yellow 10px,
+		black 15px,
+		yellow 21px,
+		black 25px,
+		yellow 31px,
+		black 35px,
+		yellow 41px,
+		black 45px
+);
 	
 
 }
