@@ -25,8 +25,8 @@
       // Confirm success with the user
       echo '
             
-              <div class="container alert alert-info h3 text-center my-3 col-6">
-               Post successfully approved!
+              <div class="container alert alert-info h3 text-center my-3 col-6 border border-dark">
+                Post successfully approved!
               </div>
             ';  
     }
@@ -34,7 +34,7 @@
     else {
       echo '
             <div class="container">
-              <div class="alert alert-danger text-center container my-3 h3 col-6">
+              <div class="alert alert-danger text-center container my-3 h3 col-6 border border-dark">
               <strong class="h1">&#9888;</strong>
               <br/>  
               <strong>Post not approved!<strong>
@@ -49,7 +49,7 @@
   else{
     echo'
     <div class="container">
-      <div class="mx-auto my-3 py-3 bg-info col-6 text-center h5">
+      <div class="mx-auto my-3 py-3 bg-info col-6 text-center h5 border border-dark">
           </form>       
               <div alert alert-dange>Are you sure you want to approve this post?</div>
               <form method="post" action="">
@@ -63,7 +63,7 @@
     </div>';
   }
 
-  echo '<div class="container alert alert-warning text-center col-4 h3">
+  echo '<div class="container alert alert-warning text-center col-4 h3 border border-dark">
           <a class=alert-link href="admin.php"> &#10132;Back to admin page</a>
         </div>';
 ?>

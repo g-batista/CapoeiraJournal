@@ -17,10 +17,9 @@
   <link rel="icon" type="image/png" sizes="16x16" href="pictures/logFavicon/favicon-16x16.png">
 
 </head>
-<a id="top"></a>
+<!-- <div id="top tabindex=0"></div> -->
 
-
-<div class="container">
+<div class="container top">
   <img src="pictures/caribe-roda2.jpeg" 
       class="img-fluid"
       style=" height: 200px;

@@ -15,20 +15,20 @@
           <a href="#">
             <img
                 title="Youtube Link"
-                src="pictures/youtub-32x32.png"
+                src="pictures/logFavicon/youtub-32x32.png"
                 alt="Youtube icon"
               >
           </a> 
           <a href="#">
             <img
-                src="pictures/facebook-32x32.png" 
+                src="pictures/logFavicon/facebook-32x32.png" 
                 title="Facebook Link"
                 alt="Facebook Icon"
               >
           </a> 
           <a href="#">
             <img
-                src="pictures/instagram-32x32.png" 
+                src="pictures/logFavicon/instagram-32x32.png" 
                 title="Instagram Link"
                 alt="Instagram Icon"
               >
