@@ -31,13 +31,16 @@ if (isset($_POST ['submit'])) {
          
           //success deleted comment
           echo '
-            <div class="alert alert-success container text-center mt-3 h4" role="alert">
+          <div class="container">
+            <div class="alert alert-success text-center mt-3 h4 border border-dark border-2" role="alert">
               Post deleted with success!
               <div class="card-body container">
                 <h5 class="card-title">Check the new Capoeira Journals</h5>
                 <a href="index.php" class="btn btn-outline-dark btn-warning"">Home</a>
               </div>
             </div>
+          </div>
+  
          ';  
     }
     else {
@@ -45,13 +48,13 @@ if (isset($_POST ['submit'])) {
       echo '
             <div class="container">
                 <div 
-                    class="alert alert-danger  text-center mt-3 h4" role="alert">
+                    class="alert alert-danger  text-center mt-3 h4 border border-dark border-2" role="alert">
                     Post was <strong>NOT</strong> removed!
                 </div>
                 <div 
-                    class="card-body  alert alert-info  text-center mt-3 h4">
+                    class="card-body  alert alert-info  text-center mt-3 h4 border border-dark border-2">
                   <h5 class="card-title">Check the Home Capoeira Journals</h5>
-                  <a href="index.php" class="btn btn-outline-dark btn-warning"">Home</a>
+                  <a href="index.php" class="btn btn-outline-dark btn-warning">Home</a>
                 </div>
             </div>
           ';
@@ -62,14 +65,14 @@ if (isset($_POST ['submit'])) {
   else{
     echo '
     <div class="container">
-        <div class="alert alert-danger mt-4  text-center h4">
+        <div class="alert alert-danger mt-4  text-center h4 border border-dark border-2">
             Do you want to <i class="h2">delete</i> this comment?
             <form method="post" action="" class="h3">
                 <input type="radio" name="confirm" value="Yes" /> Yes
                 <input type="radio" name="confirm" value="No" checked="checked" /> No
                 <br />
                 <br />
-                <button type="submit" value="submit" name="submit" class="btn btn-danger ">
+                <button type="submit" value="submit" name="submit" class="btn btn-danger">
                     Submit
                 </button>
             </form>

@@ -28,7 +28,7 @@
                     // Alert success new account
                     echo '
                             <div class="container">
-                                <div class="text-center alert-success h4 my-3 p-2">
+                                <div class="text-center alert-success h4 my-3 p-2 border border-dark">
                                     Your new account has been successfully created.
                                     <br />You\'re now ready to login.
                                     <br />
@@ -48,7 +48,7 @@
                 else {
                     // Alert account already exists for this username, so display an error message
                     echo '
-                        <div class="container text-center">
+                        <div class="container text-center border border-dark">
                             <h4 class="alert alert-danger  mt-3">
                                 An account already exists for this 
                                 <strong class="text-danger text-uppercase">username</strong>. 
@@ -65,8 +65,8 @@
 ?>
 
 <!-- other way to use action attribute is action="<?php echo $_SERVER['PHP_SELF']; ?>"-->
-<div class="container d-flex justify-content-center">
-    <div class="col-md-6 my-3"
+<div class="container">
+    <div class="container col-md-6 my-3 border border-2 border-dark"
          style="background-color: #FFFF99">
         <form
             method="post" 

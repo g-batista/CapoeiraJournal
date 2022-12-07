@@ -13,9 +13,9 @@ require_once  "header.php";
  }
 ?>
 <center class="container my-3">
-  <div class="card ">
+  <div class="card border border-dark border-2">
     <div class="card-header alert alert-success">
-      <h1><span class="badge badge-pill badge-success">&#9745;</span></h1>
+      <span class="text-success h1">&#9745;</span>
       <h3 class=" text-success">You're logged out now. See you next time!</h3>
     </div>
     <div class="card-body">

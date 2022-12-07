@@ -5,11 +5,13 @@ $title = "Eddit Comment";
 require_once "header.php";
 
 if (!isset($_SESSION['user_id'])) {
-  echo '  
+  echo '
+    <div class="container">
       <h4 class="alert alert-success container mt-3">
-          Please <strong><a href="login.php">log in</a></strong>  to access this page.
+        Please <strong><a href="login.php">log in</a></strong>  to access this page.
       </h4>
-      ';
+    </div>  
+    ';
   exit();
 }
  
@@ -31,8 +33,8 @@ $id= $_GET['id'];
           or die('Error querying database.');
          
           echo '
-          <div class="container mt-3">
-            <h4 class="alert alert-success text-center">
+          <div class="container mt-3  ">
+            <div class="alert alert-success text-center border border-dark border-2 h4" >
               Menssage updated with success.
               <strong class="text-success text-uppercase">&#9888;</strong>
               <br />
@@ -42,7 +44,7 @@ $id= $_GET['id'];
                 <a href="add.php" class="btn btn-outline-dark btn-warning"">Add New Post</a>
                 <a href="index.php" class="btn btn-outline-dark btn-warning"">Home</a>                
               </div>
-            </h4> 
+            </div> 
           </div>   
           ';         
       }
@@ -84,54 +86,56 @@ $id= $_GET['id'];
  if ($displayForm){
  ?>
 <div class="container">
-
-<form 
-  method="post" 
-  class="container col-md-6"
-  action=""
-  style="background-color:#FFFF8F">
-  <h4 class="form-group row justify-content-center text-dark mt-3 pt-2">
-      Edit Comment
-  </h4>
-  <div class="form-group text-center ">
-    <label for="title">
-          Eddit title:
-    </label>    
-    <div>
-      <input
-            id="title"
-            autofocus
-            required
-            type="text"  
-            name="title" 
-            class="from-control text-center"
-            value="<?php echo $comment['title'];?>"/>
+  <form 
+    method="post" 
+    class="container col-md-6 border border-dark border-3 my-3"
+    action=""
+    style="background-color:#FFFF8F">
+    <h4 class="form-group row justify-content-center text-dark mt-3 pt-2">
+        Edit Comment
+    </h4>
+    <div class="form-group text-center">
+      <label for="title" class="h5">
+            Eddit title:
+      </label>    
+      <div>
+        <input
+              id="title"
+              autofocus
+              required
+              type="text"  
+              name="title" 
+              class="from-control text-center"
+              value="<?php echo $comment['title'];?>"/>
+      </div>
     </div>
-  </div>
-  
-  <div class="form-group text-center">
-    <label for="text">Eddit you text here:</label>
-    <textarea 
-              id="text"
-              class="form-control" 
-              rows="5" 
-              name="msg" 
-              value=""
-              required><?php echo $comment['msg'];?></textarea>
-  </div> 
+    
+    <div class="form-group text-center my-3">
+      <label class="h5" for="text">Eddit you text here:</label>
+      <textarea 
+        id="text"
+        class="form-control" 
+        rows="5" 
+        name="msg" 
+        value=""
+        required><?php echo $comment['msg'];?>
+      </textarea>
+    </div> 
 
-  <div class="form-group row justify-content-center">
-    <div class="mb-4">
-      <button type="submit" 
-              class="btn btn-outline-dark btn-warning"
-              value="submit Form" 
-              name="submit">
-        Submit
-      </button>
-      <a class="btn btn-danger" href="index.php" role="button">Cancel</a>
+    <div class="form-group my-3 text-center">
+        <button type="submit" 
+                class="btn btn-outline-dark btn-warning"
+                value="submit Form" 
+                name="submit">
+          Submit
+        </button>
+        <a  class="btn btn-danger" 
+            href="index.php" 
+            role="button">
+            Cancel
+        </a>
     </div>
-  </div>
-</form>
+  </form>
 </div>
 
 <?php

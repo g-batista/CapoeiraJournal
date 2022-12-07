@@ -23,7 +23,7 @@ session_start();
         //Warning incorrect password
         echo '
           <div class="container">
-              <div class=" text-center mt-3 mb-4 card ">
+              <div class=" text-center mt-3 mb-4 card border border-dark border-2 ">
                 <div class="" role="alert">
                   <h5 class="card-header alert alert-danger" role="alert">
                       Incorrect <strong>username or password!</strong>
@@ -32,7 +32,7 @@ session_start();
                 <div class="card-body">
                   <h5 class="card-title">Please try again or Register</h5>
                   <br/>
-                  <a href="login.php" class="btn btn-light btn-outline-success">Log in</a>
+                  <a href="login.php" class="btn btn-light btn-outline-success">Try again</a>
                   <a href="register.php" class="btn btn-light btn-outline-warning">Register</a>
                 </div>
               </div>
@@ -50,7 +50,7 @@ session_start();
       //Success password
       echo '
              <div class="container">
-                <div class="text-center card mt-3 mb-4">
+                <div class="text-center card mt-3 mb-4 border border-dark border-2">
                   <div class="card-header alert-success">
                       <h4 class="text-success">
                           You are now logged in &#9745;
@@ -76,48 +76,43 @@ session_start();
   require_once "header.php";
 ?>
 
-<div class="mt-3 container col-md-6 col">
+<div class="my-3 container col-md-3 d-flex flex-column align-items-center">
   <form 
         method="post" 
-        class="bg-light"
+        class="bg-light border border-dark border-2 container p-3"
         action="<?php echo $_SERVER['PHP_SELF']; ?>">
         
-      <div class="form-group row justify-content-center h5">
-        <label for="username" class=" col-form-label mt-2">Username:</label>
-          <div class="col-md-3 m-2">
-            <input
-            id="username" 
-            autofocus
-            type="text"
-            name="username"
-            class="form-control"
-            placeholder="Enter your username"
-            required
-            value="<?php if (!empty($user_username)) echo $user_username; ?>"/>
-          </div>
+      <div class="form-group h5">
+        <label for="username" class="form-label">Username:</label>
+        <input
+        id="username" 
+        autofocus
+        type="text"
+        name="username"
+        class="form-control" 
+        placeholder="Enter your username"
+        required
+        value="<?php if (!empty($user_username)) echo $user_username; ?>"/>
       </div>
-      <div class="form-group row justify-content-center h5">
-        <label for="password" class="col-form-label">Password: </label>
-        <div class="col-md-3 m-2">
-          <input 
-              id="password" 
-              type="password" 
-              name="password" 
-              class="form-control" 
-              value="" 
-              required
-              placeholder="Password">
+      <div class="form-group h5">
+        <label for="password" class="form-label">Password: </label>
+        <input 
+            id="password" 
+            type="password" 
+            name="password" 
+            class="form-control" 
+            value="" 
+            required
+            placeholder="Password">
         </div>
-      </div>  
-      <div class="form-group row justify-content-center">
-        <div class="col-md-3 mb-3 text-center">
+        
+      <div class=" mb-3 text-center">
           <button type="submit" 
                   class="btn btn-outline-dark btn-warning"
                   value="Log In" 
                   name="submit">
               Submit
           </button>
-        </div>
       </div>
   </form>
 </div>

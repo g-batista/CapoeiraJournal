@@ -26,11 +26,13 @@
                         <br />
                         Check the home page content. 
                         <br />
-                        <button type="button" 
-                                class="btn btn-outline-success  btn-warning"
-                                href="index.php">
-                                Home
-                        </button>
+                        <div class="mt-2">
+                            <a type="button" 
+                                    class="btn btn-outline-success  btn-warning"
+                                    href="index.php">
+                                    Home
+                            </a>
+                        </div>
                     </div>
                 </div> 
                 <style>
@@ -66,23 +68,23 @@
     </div>
 
     <div  
-        class="mx-auto mb-3 mt-3  text-center hideContent container border border-dark col-md-7"      
+        class="mx-auto mb-3 mt-3  text-center hideContent container border border-dark border-2 col-md-7"      
         style="background-color:#FFFF8F">
 
         <h3 class="col text-center mt-3"><strong class="text-dark">Contact US</strong></h3>
 
-        <form method="post">
+        <form method="post" class="mx-md-5 mx-sm-2">
             <div class="form-group">
-                <label for="email">Email address:</label>
-                <input required type="text" class="form-control" id="exampleFormControlInput1" placeholder="capoeiraJournal@user.com" name="email">
+                <label for="email" class="h5">Email address:</label>
+                <input required type="text" class="form-control text-center" id="email" placeholder="capoeiraJournal@user.com" name="email">
             </div>
 
-            <div class="form-group">
-                <label for="ex">
-                    Experience leve?</br>
+            <div class="form-group mt-2">
+                <label for="ex" class="h5">
+                    Experience level?</br>
                     5=excellent.
                 </label>
-                <select name="ex" class="custom-select" required>
+                <select name="ex" id="ex" class="custom-select" required>
                     <option value="">Select</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -91,12 +93,12 @@
                     <option value="5">5</option>
                 </select>
             </div>
-            <div class="form-group disply-content-center">
-                <label for="text">Please leve your message:</label>
+            <div class="form-group disply-content-center mt-3">
+                <label class="h5" for="text">Please leve your message:</label>
                 <textarea class="form-control" id="text" rows="3"  name="text" required></textarea>
             </div>
             <button                 
-                    class="btn btn-outline-dark btn-warning mb-5"
+                    class="btn btn-outline-dark btn-warning my-3"
                     type="submit">
                 Submit
             </button>

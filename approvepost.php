@@ -25,7 +25,7 @@
       // Confirm success with the user
       echo '
             
-              <div class="container alert alert-info h3 text-center my-3 col-6 border border-dark">
+              <div class="container alert alert-info h3 text-center my-3 col-md-6 border border-dark border-2">
                 Post successfully approved!
               </div>
             ';  
@@ -34,7 +34,7 @@
     else {
       echo '
             <div class="container">
-              <div class="alert alert-danger text-center container my-3 h3 col-6 border border-dark">
+              <div class="alert alert-danger text-center container my-3 h3 col-md-6 border border-dark border-2">
               <strong class="h1">&#9888;</strong>
               <br/>  
               <strong>Post not approved!<strong>
@@ -49,9 +49,9 @@
   else{
     echo'
     <div class="container">
-      <div class="mx-auto my-3 py-3 bg-info col-6 text-center h5 border border-dark">
+      <div class="mx-auto my-3 py-3 bg-info col-md-6 text-center h5 border border-dark border-2">
           </form>       
-              <div alert alert-dange>Are you sure you want to approve this post?</div>
+              <div alert alert-dange>Do you want to approve this post?</div>
               <form method="post" action="">
                 <input type="radio" name="confirm" value="Yes" /> Yes
                 <input type="radio" name="confirm" value="No" checked="checked" /> No <br /> </br>
@@ -63,7 +63,11 @@
     </div>';
   }
 
-  echo '<div class="container alert alert-warning text-center col-4 h3 border border-dark">
-          <a class=alert-link href="admin.php"> &#10132;Back to admin page</a>
-        </div>';
+  echo '
+        <div class="container">
+          <div class="container alert alert-warning text-center col-md-4 h3 border border-dark border-2">
+            <a class="alert-link text-dark" href="admin.php"> &#10132;Back to admin page</a>
+          </div>
+        </div>
+        ';
 ?>

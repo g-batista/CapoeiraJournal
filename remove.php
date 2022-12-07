@@ -13,7 +13,7 @@ require_once  "system.php";
  
   else {
     echo '
-    <div class="container">
+    <div class="container border border-dark border-2">
       <div class="alert alert-danger container h3">
           Sorry, no value was specified for removal.
       </div>
@@ -30,15 +30,15 @@ require_once  "system.php";
 
       // Confirm success with the user
       echo '
-      <div class="container">
-        <div class=" alert alert-success h3 text-center">
+      <div class="container mt-2">
+        <div class=" alert alert-success h3 text-center  border border-dark border-2">
           The comment was successfully removed.
         </div>
       </div>';
     }
     else {
       echo '
-      <div class="container mt-3 text-center">
+      <div class="container mt-3 text-center border border-dark border-2">
         <div class="alert alert-danger h3 container">
           The message was not removed.
         </div>
@@ -48,10 +48,10 @@ require_once  "system.php";
   else{
     echo '
     <div class="container">
-        <div class="alert alert-danger h3 mt-3 text-center">
+        <div class="alert alert-danger h3 mt-3 text-center border border-dark border-2">
               Are you sure you want to delete this comment?
         </div>
-          <div class="alert alert-info text-center col-6 container pt-3">
+          <div class="alert alert-info text-center col-md-6 container pt-3 border border-dark border-2">
             <form method="post" action="" class="form-group pb-3 h4">
               <input type="radio" name="confirm" value="Yes" /> Yes
               <input  type="radio" name="confirm" value="No" checked="checked" /> No 
@@ -66,7 +66,10 @@ require_once  "system.php";
   }
 
   echo '
-  <div class="container text-center alert alert-warning col-6 h3" >
-      <a href="admin.php">Back to admin page</a>
-  </div>';
+    <div class="container">
+      <div class="container alert alert-warning text-center col-md-4 h3 border border-dark border-2">
+        <a class="alert-link text-dark" href="admin.php"> &#10132;Back to admin page</a>
+      </div>
+    </div>
+  ';
   ?>

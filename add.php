@@ -10,7 +10,7 @@ require_once "header.php";
       //alert to login
       echo '
       <div class="container">
-          <div class="alert alert-danger text-center mt-3 h4" role="alert">
+          <div class="alert alert-danger text-center mt-3 h4 border border-dark border-2" role="alert">
               <strong >Please</strong>
               <a href="login.php" style="color:red">log in</a> to add your post!
               <br /> 
@@ -41,24 +41,24 @@ require_once "header.php";
                 VALUES ('','$title', '$msg', 0, '$user_id','$picture')")
               or die ('Error getting on the data base');
 
-          // Confirm success with the user
+          // Confirm success
           echo '
-             <div class="container col-md-7 ">
+             <div class="container col-md-7">
                 <div 
-                    class="alert alert-success text-center mt-3 h4 container border border-success" role="alert">
+                    class="alert alert-success text-center mt-3 h4 container border border-dark border-2" role="alert">
                     Thanks for adding your new post!
                     <br /> 
                     We will review and add to the home page immediately
                 </div>
                 <div 
-                    class="alert alert-warning mt-2  border border-warning" role="alert">
+                    class="alert alert-warning mt-2  border border-dark border-2" role="alert">
                     <div>
                     <strong class="h5">Post Title:</strong> ' . $title . '
                     <br /><strong>Argument:</strong> ' . $msg . '                  
                     </div>
 
                 </div>
-                <div class="mt-2 alert alert-info text-center col-md-5 container border border-info">
+                <div class="mt-2 alert alert-info text-center col-md-6 container border border-info h5 border border-dark border-2">
                   Add a new <a class="btn btn-warning"  href="add.php" role="button">Post</a>
                   <br />
                   <strong>Or</strong><br />
@@ -87,8 +87,8 @@ require_once "header.php";
 ?>
 
 <!-- fomato nao esta bom -->
-<div id="form" class="container col-md-8 hideContent">
-  <div class="container bg-warning my-2 p-3 border border-dark">
+<div class="container col-md-8 hideContent">
+  <div class="container bg-warning my-2 p-3 border border-dark border-2">
     <form method= "post" 
           action="<?php echo $_SERVER['PHP_SELF']; ?>"
           enctype="multipart/form-data">
@@ -97,18 +97,17 @@ require_once "header.php";
         <label for="title">Post Title:</label><br/>
         <input name= "title" type="text" class="form-control border border-dark" id="title" required autofocus/>
       </div>
-      <div class="form-group">
+      <div class="form-group my-3">
         <label for="msg">Argument</label>
         <textarea name= "msg" class="form-control border border-dark" id="msg" rows="3" required ></textarea>
       </div>
-      <div class="form-group">
+      <div class="form-group my-3">
         <label for="name">Upload Picture</label>
         <input name= "picture" type="file" class="form-control border border-dark" id="name" required/>
       </div>
-      <div class="text-center">
-        <button type="submit" name= "submit" class="btn btn-primary">Submit</button>
+      <div class="text-center my-3">
+        <button type="submit" name= "submit" class="btn btn-success">Submit</button>
       </div>
-      <br/><br/>
     </form>
   </div>
 </div>

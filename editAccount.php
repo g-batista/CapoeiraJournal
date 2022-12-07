@@ -1,15 +1,15 @@
 <?php
   //concet to database
-require_once "header.php";
-require_once "system.php";
-$title = "Edit Account";
+  require_once "system.php";
+  $title = "Edit Account";
+  require_once "header.php";
 
 if (!isset($_SESSION['user_id'])) {
   
   //Alert not login.
   echo '
         <div class="container">
-            <div class="alert alert-danger text-center mt-3 h4  border border-dark" role="alert">
+            <div class="alert alert-danger text-center mt-3 h4  border border-dark border-2" role="alert">
                 Please <a  class="alert-link" href="login.php">login</a> to access this page!
             </div>
         </div>
@@ -81,7 +81,6 @@ if ($_POST) {
                                 Please use a different user name.&#9888;
                         </h4>
                        </div>
-
                     ';
             }
     }
@@ -97,27 +96,30 @@ if ($_POST) {
 ?>
 <div class="container">
   <form 
-    id="form" 
-    class="container my-4 pb-2 col-md-4 bg-warning hideForm border border-dark" 
-    method="post" 
-    action="">
+  id="form" 
+  class="container my-4 p-2 col-md-4 bg-warning hideForm border border-dark border-2 text-center" 
+  method="post" 
+  action="">
+  <h4 class="text-dark">Edit your account:</h4>
     <div class="form-group row">   
         <div class="col-4 mt-3">  
-          <label for="first_name" class="form-label">First name:</label>
+          <label for="first_name" class="form-label">
+            First name:
+          </label>
         </div>
         <div class="col mt-3">
-            <input 
-              type="text" 
-              id="first_name" 
-              name="first_name" 
-              class="form-control" 
-              autofocus 
-              required 
-              value= "<?php echo $user['first_name'];?>" />
+          <input 
+            type="text" 
+            id="first_name" 
+            name="first_name" 
+            class="form-control" 
+            autofocus 
+            required 
+            value= "<?php echo $user['first_name'];?>" />
         </div>   
     </div>
 
-    <div class="form-group row">
+    <div class="form-group row mt-2">
       <div class="col-4">
         <label for="text"> Last Name:</label>
       </div>
@@ -132,7 +134,7 @@ if ($_POST) {
       </div>
     </div>
 
-    <div class="form-group row">
+    <div class="form-group row mt-2">
       <div class="col-4">
           <label for="text"> Username:</label>
       </div>
@@ -147,7 +149,7 @@ if ($_POST) {
       </div>
     </div>
 
-    <div class="form-group row">
+    <div class="form-group row mt-2">
       <div class="col-4">
         <label for="text">Password:</label>
       </div>
@@ -162,7 +164,7 @@ if ($_POST) {
       </div>
     </div>
 
-    <div class="form-group row justify-content-center">
+    <div class="form-group mt-2">
       <button 
           type="submit"  
           value="Submit Form" 
@@ -184,4 +186,3 @@ if ($_POST) {
 <?php mysqli_close($dbc);
 require_once "footer.php";
 ?>
-

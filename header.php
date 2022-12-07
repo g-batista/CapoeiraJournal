@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
   <link rel="stylesheet" href="style.css">
   <!-- use the page set title variable -->
@@ -19,22 +20,24 @@
 </head>
 <!-- <div id="top tabindex=0"></div> -->
 
-<div class="container top">
+<div class="container top mt-1">
   <img src="pictures/caribe-roda2.jpeg" 
       class="img-fluid"
       style=" height: 200px;
-              width: 1110px;"
+              width: 100%"
       alt="Capoeira roda very colofull,author: Caribé.">
 
-    <nav 
+  <nav 
         class="navbar navbar-expand-lg navbar-dark d-flex justify-content-between border-bottom border-warning"        
         role="navigation"
         style="background-color:black"> 
-        <a class="align-items-stretch" href="index.php">
-          <img src="pictures/logo-1.png" alt="Oficial logo, star with capoeira journal on the top wings">
 
+<div class="container-fluid">
+
+        <a class="navbar-brand align-items-stretch" href="index.php">
+          <img src="pictures/logo-1.png" alt="Oficial logo, star with capoeira journal on the top wings">
         </a>
-        <button 
+        <!-- <button 
                 type="button" 
                 class="d-lg-none menu-trasitio rounded-circle" 
                 data-toggle="collapse" 
@@ -43,10 +46,26 @@
                 aria-expanded="false" 
                 aria-label="Toggle navigation"
                 style=" height: 55px; width: 65px;">
-        </button>
+        </button> -->
+      <button 
+      class="navbar-toggler menu-trasitio rounded-circle" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbar" 
+      aria-controls="navbar" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation"
+      style=" height: 55px; width: 65px;">
+      </button>
+
+
+
+
+
+
 
         <div class="collapse navbar-collapse" id="navbar">
-            <ul class="d-md-flex ml-auto nav-bar-nav list-unstyled p-1 h6">
+            <ul class="d-md-flex ms-auto navbar-nav h6">
                     <li class="nav-item active">
                       <a class="nav-link text-white" href="index.php" aria-controls="profile" aria-selected="false">Home</a>
                     </li>
@@ -91,5 +110,7 @@
                     </li>
               </ul>
         </div>
+</div>
+       
     </nav>
 </div>

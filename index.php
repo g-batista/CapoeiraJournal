@@ -91,14 +91,13 @@
                                      WHERE approved =1 $where_search 
                                      and approved =1
                                      ORDER BY date DESC");    
-                                    // and title like '%{$search}%' or username like '%{$search}%'"
     }
     //show message if nothig found.
     if(mysqli_num_rows($posts)==0) {
         echo' 
             <div class="container mx-auto">
                 
-                <div class="card-body alert alert-danger mt-3 text-center col-md">
+                <div class="card-body alert alert-danger mt-3 text-center border border-dark border-2">
                     <h5 class="card-title">Search not found!</h5>
                     <a href="add.php" class="btn btn-outline-dark btn-warning"">Add Post</a>
                     <a href="search.php" class="btn btn-outline-dark btn-warning"">Search Again</a>
