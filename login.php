@@ -22,7 +22,7 @@ session_start();
 
         //Warning incorrect password
         echo '
-          <div class="container">
+          <div class="container col-md-6">
               <div class=" text-center mt-3 mb-4 card border border-dark border-2 ">
                 <div class="" role="alert">
                   <h5 class="card-header alert alert-danger" role="alert">
@@ -49,7 +49,7 @@ session_start();
       require_once "header.php";
       //Success password
       echo '
-             <div class="container">
+             <div class="container col-md-6">
                 <div class="text-center card mt-3 mb-4 border border-dark border-2">
                   <div class="card-header alert-success">
                       <h4 class="text-success">
@@ -81,6 +81,7 @@ session_start();
         method="post" 
         class="bg-light border border-dark border-2 container p-3"
         action="<?php echo $_SERVER['PHP_SELF']; ?>">
+      <h4 class="text-dark text-center mb-4 border-2 border-bottom border-dark">Log In</h4>
         
       <div class="form-group h5">
         <label for="username" class="form-label">Username:</label>
@@ -106,7 +107,7 @@ session_start();
             placeholder="Password">
         </div>
         
-      <div class=" mb-3 text-center">
+      <div class=" my-3 text-center">
           <button type="submit" 
                   class="btn btn-outline-dark btn-warning"
                   value="Log In" 

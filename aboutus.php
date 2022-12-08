@@ -20,7 +20,7 @@
             echo '
 
                 <div class="container ">
-                    <div class="alert alert-success border border-dark text-center mt-3 h4" role="alert">
+                    <div class="alert alert-success border border-dark border-2 text-center mt-3 h4" role="alert">
                         <h1>Thank You!</h1>
                         Your contribution was successfuly submited!
                         <br />
@@ -53,7 +53,7 @@
                 alt="Capoeira Journal oficial logo">
 
 </div>
-    <div class="card bg-info hideContent col-md-9 container border border-dark ">
+    <div class="card bg-info hideContent col-md-9 container border border-dark border-2">
         <h1 style="text-align:center"
             class="card-title">
           Our Mission
@@ -86,11 +86,11 @@
                 </label>
                 <select name="ex" id="ex" class="custom-select" required>
                     <option value="">Select</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
                     <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
                 </select>
             </div>
             <div class="form-group disply-content-center mt-3">

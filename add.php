@@ -46,17 +46,17 @@ require_once "header.php";
              <div class="container col-md-7">
                 <div 
                     class="alert alert-success text-center mt-3 h4 container border border-dark border-2" role="alert">
-                    Thanks for adding your new post!
+                    Thank you for adding your new post!
                     <br /> 
-                    We will review and add to the home page immediately
+                    We will review it and add it to the home page immediately!
                 </div>
                 <div 
                     class="alert alert-warning mt-2  border border-dark border-2" role="alert">
                     <div>
-                    <strong class="h5">Post Title:</strong> ' . $title . '
-                    <br /><strong>Argument:</strong> ' . $msg . '                  
-                    </div>
-
+                      <strong class="h5 mb-4">Post Title: <i class="text-danger"> ' . $title . '</i></strong>
+                      <br />
+                      <strong class="h5">Argument:</strong> ' . $msg . '                  
+                    </div> 
                 </div>
                 <div class="mt-2 alert alert-info text-center col-md-6 container border border-info h5 border border-dark border-2">
                   Add a new <a class="btn btn-warning"  href="add.php" role="button">Post</a>
@@ -77,7 +77,7 @@ require_once "header.php";
   } else {
       echo'
       <div class="container hideContent">
-        <div id="card" style="margin-top:9px" class="border border-warning">
+        <div id="card" style="margin-top:9px" class="border border-warning border-2">
             <h3 style="text-align:center; color:">Add your post</h3></br>
             <p id="home" style="text-align:center">To add your post you need to log in or register. 
             You are welcome to make as many post as you want, one at the time. After entering your posts, our team members will have to approve. Please enjoy!</p></br>

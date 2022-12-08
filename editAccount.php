@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
   
   //Alert not login.
   echo '
-        <div class="container">
+        <div class="container col-md-6">
             <div class="alert alert-danger text-center mt-3 h4  border border-dark border-2" role="alert">
                 Please <a  class="alert-link" href="login.php">login</a> to access this page!
             </div>
@@ -50,22 +50,22 @@ if ($_POST) {
             
             //success message
             echo '
-            <div class="container">
-            <div class="alert alert-success  text-center mt-3 h4 border border-dark">
-            Successfully edited account!
-            <br />
-            Vist the <a class="alert-link" href=".php">Home</a> page. 
-            </div>
-            
-            <div class="alert alert-danger  text-center mt-3 h4 border border-dark" role="alert">
-            Please <a  class="alert-link" href="login.php">login</a> again to access this page!
-            </div>
+            <div class="container col-md-6">
+              <div class="alert alert-success  text-center mt-3 h4 border border-dark">
+                Successfully edited account!
+                <br />
+                Vist the <a class="alert-link" href="index.php">Home</a> page. 
+              </div>
+              
+              <div class="alert alert-danger  text-center mt-3 h4 border border-dark" role="alert">
+                Please <a  class="alert-link" href="login.php">login</a> again to access this page!
+              </div>
             </div>
             
             <style>
-            form.hideForm {
-              display: none;
-              </style>
+              form.hideForm {
+                display: none;
+            </style>
               ';
               require_once "header.php";
           } 
@@ -73,7 +73,7 @@ if ($_POST) {
         else {
                // An account already exists for this username, so display an error message
                echo '
-                      <div class="container">
+                      <div class="container col-md-6">
                         <h4 class="alert alert-danger container mt-3 text-center border border-dark">
                             An account already exists for this 
                             <strong class="text-danger text-uppercase">username.</strong>

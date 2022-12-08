@@ -7,12 +7,15 @@
         // hide element
         echo '
         <style>
-                div.hideMypost {
-                    display: none;
+                .hideMypost,.myCommentsHide {
+                    display: none
+                }
         </style>';
+
     }
     else{
         $title = "Capoeira Journal";
+
     }
     if(isset($_POST['search'])){
         
@@ -22,9 +25,9 @@
         //hide element
         echo '
             <style>
-            div.hideMypost {
-                display: none
-            }
+                div.hideMypost {
+                    display: none
+                }
             </style>
             ';         
     }
@@ -38,9 +41,10 @@
         
  ?>
 <!-- go to top button & display only on md-lg -->
+
 <a    
     href="#top" 
-    class="float d-none d-md-block">
+    class="float d-none d-md-block show">
     &#8593;
 </a>
 <div class="container my-2 hideMypost">
@@ -80,9 +84,45 @@
                                     WHERE approved =1 $where_search
                                     AND user_id =$user_id 
                                     ORDER BY date DESC");
+
+        if(mysqli_num_rows($posts)==0) {
+            echo' 
+                <div class="container text-center col-md-6">                  
+                    <div class="card-body alert alert-danger mt-3 text-center border border-dark border-2">
+                        <h5 class="card-title">
+                            You don\'t have any posts yet!<br />
+                            Or the post may be waiting for approval!</h5> 
+                        <a href="add.php" class="btn btn-outline-dark btn-warning">Add Post</a>
+                    </div>
+                </div>
+                <style>
+                    .alertNotApproved {
+                    display: none}
+            </style>
+    
+            ';
+        }
+       echo' 
+       <div class="container col-md-9 mt-2 text-center h5 alertNotApproved">
+            <div class="alert alert-danger alert-dismissible fade show border border-dark border-3" role="alert">
+                <strong class="h3">
+                    If you don\'t see a post that passed 48 hours,
+                    after being added! 
+                </strong>
+                <br />
+                Maybe it is because it was not approved
+                <br/>
+                Or the post is still waiting for approval!
+                <br/>
+                <a href="aboutus.php" class="btn btn-outline-dark btn-warning mt-3">Contact Us</a>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    
+        ';
     }   
    
-     else {
+    else {
          //geting approved posts without user ID
          $posts = mysqli_query($dbc,"SELECT comments.*, journal_user.username
                                      FROM comments
@@ -95,7 +135,7 @@
     //show message if nothig found.
     if(mysqli_num_rows($posts)==0) {
         echo' 
-            <div class="container mx-auto">
+            <div class="container mx-auto myCommentsHide col-md-5">
                 
                 <div class="card-body alert alert-danger mt-3 text-center border border-dark border-2">
                     <h5 class="card-title">Search not found!</h5>

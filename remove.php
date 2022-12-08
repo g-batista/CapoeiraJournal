@@ -32,15 +32,15 @@ require_once  "system.php";
       echo '
       <div class="container mt-2">
         <div class=" alert alert-success h3 text-center  border border-dark border-2">
-          The comment was successfully removed.
+          The post was successfully removed.
         </div>
       </div>';
     }
     else {
       echo '
-      <div class="container mt-3 text-center border border-dark border-2">
-        <div class="alert alert-danger h3 container">
-          The message was not removed.
+      <div class="container mt-3 text-center ">
+        <div class="alert alert-danger h3 container border border-dark border-2">
+          The post was not removed.
         </div>
       </div>';
     }
@@ -49,7 +49,7 @@ require_once  "system.php";
     echo '
     <div class="container">
         <div class="alert alert-danger h3 mt-3 text-center border border-dark border-2">
-              Are you sure you want to delete this comment?
+              Are you sure you want to delete this post?
         </div>
           <div class="alert alert-info text-center col-md-6 container pt-3 border border-dark border-2">
             <form method="post" action="" class="form-group pb-3 h4">

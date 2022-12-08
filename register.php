@@ -28,7 +28,7 @@
                     // Alert success new account
                     echo '
                             <div class="container">
-                                <div class="text-center alert-success h4 my-3 p-2 border border-dark">
+                                <div class="text-center alert-success h4 my-3 p-2 border border-dark border-2">
                                     Your new account has been successfully created.
                                     <br />You\'re now ready to login.
                                     <br />
@@ -48,8 +48,8 @@
                 else {
                     // Alert account already exists for this username, so display an error message
                     echo '
-                        <div class="container text-center border border-dark">
-                            <h4 class="alert alert-danger  mt-3">
+                        <div class="container text-center">
+                            <h4 class="alert alert-danger mt-3 border border-dark border-2">
                                 An account already exists for this 
                                 <strong class="text-danger text-uppercase">username</strong>. 
                                    <br />Please use a different user name.&#9888;
@@ -73,7 +73,7 @@
             action="register.php"
             class="form-group my-2 p-2 text-center">
             
-            <h3 class="text-dark">Register</h3>
+            <h3 class="text-dark" for="username">Register</h3>
             
             <label for="username" style= "color:black" class="form-label h5">Username:</label>
             <input type="text" id="username" name="username" class="form-control text-center" autofocus required  />
