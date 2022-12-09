@@ -40,13 +40,13 @@
     require_once "header.php";
         
  ?>
-<!-- go to top button & display only on md-lg -->
+    <a    
+        href="#top" 
+        class="float d-none d-md-block show">
+        &#8593;
+    </a>
 
-<a    
-    href="#top" 
-    class="float d-none d-md-block show">
-    &#8593;
-</a>
+<!-- go to top button & display only on md-lg -->
 <div class="container my-2 hideMypost">
 
     <div
@@ -54,7 +54,7 @@
         style="background-color:black"> 
         <p  id="home">
             Welcome to Capoeira Journal! Here everyone can give a contribution to the capoeira world.
-            From a newb to a Capoeira master, you can make difference! 
+            From a noob to a Capoeira master, you can make difference! 
         </p>
     </div>
 </div>
@@ -139,14 +139,12 @@
                 
                 <div class="card-body alert alert-danger mt-3 text-center border border-dark border-2">
                     <h5 class="card-title">Search not found!</h5>
-                    <a href="add.php" class="btn btn-outline-dark btn-warning"">Add Post</a>
                     <a href="search.php" class="btn btn-outline-dark btn-warning"">Search Again</a>
                 </div>
             </div>
 
         ';
     }
-   
     //loop on the query and echo comment
      while ($post = mysqli_fetch_assoc($posts)) {
             echo '
@@ -166,7 +164,7 @@
 
                             <p>
                                 <small class="text-muted">Posted: '.$post['date'].'</small><br/>
-                                <small class="text-muted">Autor: '.$post['username'].'</small>
+                                <small class="text-muted">Author: '.$post['username'].'</small>
                             </p>
 
                             <div id="back row">
@@ -208,7 +206,8 @@
                         </div>
                     </div>
                 </div>                    
-            ';
+            ';      
+        
     } 
 
    mysqli_close($dbc);

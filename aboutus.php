@@ -19,7 +19,7 @@
 
             echo '
 
-                <div class="container ">
+                <div class="container col-md-7 ">
                     <div class="alert alert-success border border-dark border-2 text-center mt-3 h4" role="alert">
                         <h1>Thank You!</h1>
                         Your contribution was successfuly submited!

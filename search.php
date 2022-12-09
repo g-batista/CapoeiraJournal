@@ -12,12 +12,13 @@ require_once "header.php";
       action="index.php">
 
     <h4 class="form-group text-center text-dark mt-3 pt-3">
-        Search by author name or post title
+        Search by<strong class="text-danger h3"> author name</strong> 
+        or <strong class="text-danger h3">post title</strong>
     </h4>
     <div class="form-group h5 text-center">
       <label 
           for="username" 
-          class="col-form-label text-danger">
+          class="col-form-label h4">
             Search:
       </label>
         <input 

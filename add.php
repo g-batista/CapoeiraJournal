@@ -55,14 +55,14 @@ require_once "header.php";
                     <div>
                       <strong class="h5 mb-4">Post Title: <i class="text-danger"> ' . $title . '</i></strong>
                       <br />
-                      <strong class="h5">Argument:</strong> ' . $msg . '                  
+                      <strong class="h5">Text:</strong> ' . $msg . '                  
                     </div> 
                 </div>
                 <div class="mt-2 alert alert-info text-center col-md-6 container border border-info h5 border border-dark border-2">
                   Add a new <a class="btn btn-warning"  href="add.php" role="button">Post</a>
                   <br />
                   <strong>Or</strong><br />
-                  Navegate to the <a class="btn btn-warning" href="index.php" role="button"">Home</a> page.
+                  Navigate to the <a class="btn btn-warning" href="index.php" role="button"">Home</a> page.
                 </div>
               </div>
               ';
@@ -98,7 +98,7 @@ require_once "header.php";
         <input name= "title" type="text" class="form-control border border-dark" id="title" required autofocus/>
       </div>
       <div class="form-group my-3">
-        <label for="msg">Argument</label>
+        <label for="msg">Text:</label>
         <textarea name= "msg" class="form-control border border-dark" id="msg" rows="3" required ></textarea>
       </div>
       <div class="form-group my-3">

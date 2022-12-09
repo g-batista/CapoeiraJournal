@@ -33,16 +33,16 @@ $id= $_GET['id'];
           or die('Error querying database.');
          
           echo '
-          <div class="container mt-3  ">
+          <div class="container mt-3 col-md-6">
             <div class="alert alert-success text-center border border-dark border-2 h4" >
-              Menssage updated with success.
+              Post edited with success.
               <strong class="text-success text-uppercase">&#9888;</strong>
               <br />
               We will review and add to the home page immediately!
               <br />
               <div class="mt-3">
-                <a href="add.php" class="btn btn-outline-dark btn-warning"">Add New Post</a>
-                <a href="index.php" class="btn btn-outline-dark btn-warning"">Home</a>                
+                <a href="add.php" class="btn btn-outline-dark btn-warning">Add New Post</a>
+                <a href="index.php" class="btn btn-outline-dark btn-warning">Home</a>                
               </div>
             </div> 
           </div>   

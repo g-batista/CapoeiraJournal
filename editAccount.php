@@ -2,10 +2,11 @@
   //concet to database
   require_once "system.php";
   $title = "Edit Account";
-  require_once "header.php";
+  // require_once "header.php";
 
 if (!isset($_SESSION['user_id'])) {
-  
+  require_once "header.php";
+
   //Alert not login.
   echo '
         <div class="container col-md-6">
@@ -19,10 +20,12 @@ if (!isset($_SESSION['user_id'])) {
   exit();
 }
  
-$id= $_SESSION['user_id'];
+  $id= $_SESSION['user_id'];
 
   //if not empty post data
-if ($_POST) {
+
+  // if (isset($_POST['submit'])) {
+  if ($_POST) {
 
     $username = mysqli_real_escape_string($dbc,$_POST['username']);
     $password = mysqli_real_escape_string($dbc,$_POST['password']);
@@ -37,40 +40,50 @@ if ($_POST) {
 
         if (mysqli_num_rows($data) == 0) {
 
-          //commet query to add iformatios
+          //commet query to add informatio
           mysqli_query($dbc, "UPDATE journal_user 
                             SET username ='$username', 
                             password= sha1('$password'),first_name='$first_name',last_name='$last_name'
                             WHERE id=$id")
             or die('#1 Error querying database.');
             
+            
             unset($_SESSION['user_id']);
+
+            if (!isset($_SESSION['user_id'])) {
+              require_once "header.php";
             
-            $_SESSION = array();
-            
-            //success message
-            echo '
-            <div class="container col-md-6">
-              <div class="alert alert-success  text-center mt-3 h4 border border-dark">
-                Successfully edited account!
-                <br />
-                Vist the <a class="alert-link" href="index.php">Home</a> page. 
+              //Alert not login.
+              echo '
+              <div class="container col-md-6">
+                <div class="alert alert-success  text-center mt-3 h4 border border-dark">
+                  Successfully edited account!
+                  <br />
+                  Vist the <a class="alert-link" href="index.php">Home</a> page. 
+                </div>
+                
+                <div class="alert alert-danger  text-center mt-3 h4 border border-dark" role="alert">
+                  Please <a  class="alert-link" href="login.php">login</a> again to access this page!
+                </div>
               </div>
               
-              <div class="alert alert-danger  text-center mt-3 h4 border border-dark" role="alert">
-                Please <a  class="alert-link" href="login.php">login</a> again to access this page!
-              </div>
-            </div>
+              <style>
+                form.hideForm {
+                  display: none;
+              </style>
+            ';
             
-            <style>
-              form.hideForm {
-                display: none;
-            </style>
-              ';
-              require_once "header.php";
+              require_once "footer.php";
+              exit();
+            }
+            
+            $_SESSION = array();
+
           } 
               
         else {
+          require_once "header.php";
+
                // An account already exists for this username, so display an error message
                echo '
                       <div class="container col-md-6">
@@ -83,10 +96,10 @@ if ($_POST) {
                        </div>
                     ';
             }
+            require_once "header.php";
     }
-
-
 }  
+  require_once "header.php";
 
     $result= mysqli_query($dbc, "SELECT * FROM journal_user WHERE id=$id")
     or die('#2 Error querying database.');

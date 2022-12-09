@@ -27,7 +27,7 @@
 
                     // Alert success new account
                     echo '
-                            <div class="container">
+                            <div class="container col-md-7">
                                 <div class="text-center alert-success h4 my-3 p-2 border border-dark border-2">
                                     Your new account has been successfully created.
                                     <br />You\'re now ready to login.
@@ -48,7 +48,7 @@
                 else {
                     // Alert account already exists for this username, so display an error message
                     echo '
-                        <div class="container text-center">
+                        <div class="container text-center col-md-6">
                             <h4 class="alert alert-danger mt-3 border border-dark border-2">
                                 An account already exists for this 
                                 <strong class="text-danger text-uppercase">username</strong>. 
@@ -56,7 +56,7 @@
                             </h4>
                         </div>';
                     //Redefine variable
-                    $username = " "; 
+                    $username = ""; 
                 }
             }
     }
