@@ -72,8 +72,9 @@ require_once "header.php";
                 .hideContent {
                 display: none;
                 </style>
-            ';    
+            ';
        }
+
   } else {
       echo'
       <div class="container hideContent">
@@ -95,15 +96,30 @@ require_once "header.php";
     
       <div class="form-group">
         <label for="title">Post Title:</label><br/>
-        <input name= "title" type="text" class="form-control border border-dark" id="title" required autofocus/>
+        <input name= "title" 
+               type="text" 
+               class="form-control border border-dark" 
+               id="title" 
+               required 
+               autofocus
+               pattern="[a-zA-Z0-9\s\+\.]$"/>
       </div>
       <div class="form-group my-3">
         <label for="msg">Text:</label>
-        <textarea name= "msg" class="form-control border border-dark" id="msg" rows="3" required ></textarea>
+        <textarea name= "msg" 
+                  class="form-control border border-dark" 
+                  id="msg" 
+                  rows="3" 
+                  required
+                  pattern="[a-zA-Z0-9\s\+\.]"></textarea>
       </div>
       <div class="form-group my-3">
-        <label for="name">Upload Picture</label>
-        <input name= "picture" type="file" class="form-control border border-dark" id="name" required/>
+        <label for="name">Upload Picture: png, jpeg, jpg </label>
+        <input name= "picture" 
+               type="file" 
+               class="form-control border border-dark" 
+               id="name" 
+               required"/>
       </div>
       <div class="text-center my-3">
         <button type="submit" name= "submit" class="btn btn-success">Submit</button>

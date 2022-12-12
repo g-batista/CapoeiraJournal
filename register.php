@@ -71,21 +71,59 @@
         <form
             method="post" 
             action="register.php"
-            class="form-group my-2 p-2 text-center">
+            class="form-group my-2 p-2 text-center needs-validation">
             
             <h3 class="text-dark" for="username">Register</h3>
             
-            <label for="username" style= "color:black" class="form-label h5">Username:</label>
-            <input type="text" id="username" name="username" class="form-control text-center" autofocus required  />
+            <label for="username" style= "color:black" class="form-label h5">
+                Username:
+                <p class="fw-lighter text-muted">Numbers or letters minimum #4</p>
+            </label>
+            <input  type="text" 
+                    id="username" 
+                    name="username" 
+                    class="form-control text-center" 
+                    autofocus 
+                    required
+                    pattern="[A-Za-z0-9]{4,}">
+                    
+            <label for="password" style= "color:black" class="form-label h5 text-center">
+                Password:
+                <p class="fw-lighter text-muted"> Only number minimum #4</p>
+            </label>
+            <input type="text" 
+                   id="password" 
+                   name="password" 
+                   class="form-control text-center" 
+                   required
+                   pattern="[0-9]{4}">
 
-            <label for="password" style= "color:black" class="form-label h5 text-center">Password:</label>
-            <input type="text" id="password" name="password" class="form-control text-center" required/>
-
-            <label for="first_name" style= "color:black" class="form-label h5 text-center">First name:</label>
-            <input type="text" id="first_name" name="first_name" class="form-control text-center" required/>
+            <label for="first_name" style= "color:black" class="form-label h5 text-center">
+            First name: 
+            <p class="fw-lighter text-muted"> Numbers or letters minimum #4</p>
+            </label>
+            <input 
+                type="text" 
+                id="first_name" 
+                name="first_name" 
+                class="form-control text-center" 
+                required 
+                pattern="[A-Za-z0-9]{4,}">
             
-            <label for="last_name" style= "color:black" class="form-label h5 text-center">Last name:</label>
-            <input type="text" id="last_name" name="last_name" class="form-control text-center" required/>
+            <label 
+                for="last_name" 
+                style= "color:black" 
+                class="form-label h5 text-center">
+                Last name:
+                <p class="fw-lighter text-muted"> Numbers or letters minimum #4</p>
+        </label>
+            <input 
+                type="text" 
+                id="last_name" 
+                name="last_name" 
+                class="form-control text-center" 
+                required                     
+                pattern="[A-Za-z0-9]{4,}">
             
             <button type="submit"
                     class="btn btn-outline-light btn-danger my-3"

@@ -76,7 +76,14 @@
         <form method="post" class="mx-md-5 mx-sm-2">
             <div class="form-group">
                 <label for="email" class="h5">Email address:</label>
-                <input required type="text" class="form-control text-center" id="email" placeholder="capoeiraJournal@user.com" name="email">
+                <input 
+                    required 
+                    type="text" 
+                    class="form-control text-center" 
+                    id="email" 
+                    placeholder="capoeiraJournal@user.com" 
+                    name="email"  
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
             </div>
 
             <div class="form-group mt-2">
@@ -95,7 +102,13 @@
             </div>
             <div class="form-group disply-content-center mt-3">
                 <label class="h5" for="text">Please leve your message:</label>
-                <textarea class="form-control" id="text" rows="3"  name="text" required></textarea>
+                <textarea 
+                    class="form-control" 
+                    id="text" 
+                    rows="3"  
+                    name="text" 
+                    required 
+                    pattern="[^<>]+[^</>]"></textarea>
             </div>
             <button                 
                     class="btn btn-outline-dark btn-warning my-3"

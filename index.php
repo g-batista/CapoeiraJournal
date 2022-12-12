@@ -165,14 +165,16 @@
                             <p>
                                 <small class="text-muted">Posted: '.$post['date'].'</small><br/>
                                 <small class="text-muted">Author: '.$post['username'].'</small>
-                            </p>
+                            </p>';
 
-                            <div id="back row">
-                                <img  
-                                class="rounded mx-auto d-block mb-3 img-fluid col-md-6 col-sm border border-warning p-0"
-                                src="pictures/'.$post['picture'].'">
-                            </div>
-                ';
+                            if(!empty ($post['picture'])){
+                                echo '
+                                    <div id="back row">
+                                        <img  
+                                        class="rounded mx-auto d-block mb-3 img-fluid col-md-6 col-sm border border-warning p-0"
+                                        src="pictures/'.$post['picture'].'">
+                                    </div>
+                                ';}
 
             //Edit & comment
             if($user_id == $post['user_id']){

@@ -31,10 +31,14 @@
             <tr class="table-secondary h5">
               <th class="border border-dark" scope="col border border-dark">Title</th>
               <th class="border border-dark" scope="col">Date</th>
-              <th class="border border-dark" scope="col">Message</th>
-              <th class="border border-dark" scope="col">Picture</th>
-              <th class="border border-dark" scope="col">Remove?</th>
-              ';
+              <th class="border border-dark" scope="col">Message</th>';
+              if(!empty ($row['picture'])){
+                echo '
+                <th class="border border-dark" scope="col">Picture</th>
+                ';}
+                echo '
+                <th class="border border-dark" scope="col">Remove?</th>
+                ';
               
               if ($row['approved'] == '0') {
                 echo '
@@ -50,12 +54,17 @@
           <tr class="border border-dark" scope="row">
             <td class="col-1 border border-dark text-dark h5">' . $row['title'] . '</td>
             <td class="col-1 border border-dark">' . $row['date'] . '</td>
-            <td class="border border-dark">' . $row['msg'] . '</td>
-            <td class="col-3">
-             <img class="img-fluid"
-                 src="pictures/'.$row['picture'].'">
-            </td>
+            <td class="border border-dark">' . $row['msg'] . '</td>';
             
+              if(!empty ($row['picture'])){
+                echo'
+                    <td class="col-3">
+                    <img class="img-fluid"
+                        src="pictures/'.$row['picture'].'">
+                    </td>
+                ';}
+              
+          echo'
             <td class="border border-dark col-1">
               <a class="text-danger" href="remove.php?id=' . $row['id']. '"> 
                 Remove
