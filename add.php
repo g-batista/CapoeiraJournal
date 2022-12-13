@@ -81,7 +81,9 @@ require_once "header.php";
         <div id="card" style="margin-top:9px" class="border border-warning border-2">
             <h3 style="text-align:center; color:">Add your post</h3></br>
             <p id="home" style="text-align:center">To add your post you need to log in or register. 
-            You are welcome to make as many post as you want, one at the time. After entering your posts, our team members will have to approve. Please enjoy!</p></br>
+            You are welcome to make as many posts as you want, one at a time. 
+            After entering your posts, our team members will have to approve them. 
+            Please enjoy!</p></br>
         </div>
       </div>';
     }
@@ -95,26 +97,31 @@ require_once "header.php";
           enctype="multipart/form-data">
     
       <div class="form-group">
-        <label for="title">Post Title:</label><br/>
+        <label for="title">
+          Post Title:
+        </label><br/>
         <input name= "title" 
                type="text" 
                class="form-control border border-dark" 
                id="title" 
                required 
                autofocus
-               pattern="[a-zA-Z0-9\s\+\.]$"/>
+               pattern="[a-zA-Z0-9].+"
+               />
       </div>
       <div class="form-group my-3">
-        <label for="msg">Text:</label>
+        <label for="msg">
+          Text:
+        </label>
         <textarea name= "msg" 
                   class="form-control border border-dark" 
                   id="msg" 
                   rows="3" 
                   required
-                  pattern="[a-zA-Z0-9\s\+\.]"></textarea>
+                  pattern="[a-zA-Z0-9].+"></textarea>
       </div>
       <div class="form-group my-3">
-        <label for="name">Upload Picture: png, jpeg, jpg </label>
+        <label for="picture">Upload Picture: png, jpeg, jpg </label>
         <input name= "picture" 
                type="file" 
                class="form-control border border-dark" 

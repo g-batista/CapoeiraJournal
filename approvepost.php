@@ -30,11 +30,11 @@
               </div>
             ';  
     }
-    // Message for no// yes was not showing
+    // Message was not approved
     else {
       echo '
-            <div class="container">
-              <div class="alert alert-danger text-center container my-3 h3 col-md-6 border border-dark border-2">
+            <div class="container col-md-7">
+              <div class="alert alert-danger text-center container my-3 h3 border border-dark border-2">
               <strong class="h1">&#9888;</strong>
               <br/>  
               <strong>Post not approved!<strong>

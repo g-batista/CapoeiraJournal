@@ -71,7 +71,7 @@
         <form
             method="post" 
             action="register.php"
-            class="form-group my-2 p-2 text-center needs-validation">
+            class="form-group my-2 p-2 text-center">
             
             <h3 class="text-dark" for="username">Register</h3>
             
@@ -85,7 +85,7 @@
                     class="form-control text-center" 
                     autofocus 
                     required
-                    pattern="[A-Za-z0-9]{4,}">
+                    pattern="[A-Za-z0-9]{4,}"/>
                     
             <label for="password" style= "color:black" class="form-label h5 text-center">
                 Password:
@@ -96,7 +96,7 @@
                    name="password" 
                    class="form-control text-center" 
                    required
-                   pattern="[0-9]{4}">
+                   pattern="[0-9]{4}"/>
 
             <label for="first_name" style= "color:black" class="form-label h5 text-center">
             First name: 
@@ -108,7 +108,7 @@
                 name="first_name" 
                 class="form-control text-center" 
                 required 
-                pattern="[A-Za-z0-9]{4,}">
+                pattern="[A-Za-z0-9]{4,}"/>
             
             <label 
                 for="last_name" 
@@ -123,7 +123,7 @@
                 name="last_name" 
                 class="form-control text-center" 
                 required                     
-                pattern="[A-Za-z0-9]{4,}">
+                pattern="[A-Za-z0-9]{4,}"/>
             
             <button type="submit"
                     class="btn btn-outline-light btn-danger my-3"

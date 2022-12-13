@@ -27,9 +27,12 @@ $id= $_GET['id'];
       ['title']);
 
       $msg = mysqli_real_escape_string($dbc,$_POST['msg']);
+
         
       //commet query to add iformatios
-      mysqli_query($dbc, "UPDATE comments SET title ='$title', msg='$msg', approved='0' WHERE id=$id")
+      mysqli_query($dbc, "UPDATE comments 
+                          SET title ='$title', msg='$msg', approved='0'
+                          WHERE id=$id")
           or die('Error querying database.');
          
           echo '
@@ -38,7 +41,7 @@ $id= $_GET['id'];
               Post edited with success.
               <strong class="text-success text-uppercase">&#9888;</strong>
               <br />
-              We will review and add to the home page immediately!
+              We will review it and add to the home page immediately!
               <br />
               <div class="mt-3">
                 <a href="add.php" class="btn btn-outline-dark btn-warning">Add New Post</a>
@@ -118,10 +121,26 @@ $id= $_GET['id'];
         rows="5" 
         name="msg" 
         value=""
-        required><?php echo $comment['msg'];?>
+        required>
+        <?php echo $comment['msg'];?>
       </textarea>
     </div> 
 
+
+    <div class="text-center">
+      <img class="" img-fluid" src="pictures/<?php echo $comment['picture'];?>"/>
+    </div>
+    <div class="form-group my-3">
+      <!-- <img class="img-fluid"
+      src="pictures/'.$row['picture'].'"> -->
+      
+      <!-- <label for="name">Upload Picture: png, jpeg, jpg </label>
+        <input name="picture" 
+               type="file" 
+               class="form-control border border-dark" 
+               id="name" 
+               required"/>
+      </div> -->
     <div class="form-group my-3 text-center">
         <button type="submit" 
                 class="btn btn-outline-dark btn-warning"

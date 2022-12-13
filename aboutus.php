@@ -13,7 +13,6 @@
                 $ex = mysqli_real_escape_string($dbc,$_POST['ex']);
                 $text = mysqli_real_escape_string($dbc,$_POST['text']);
                 
-
             mysqli_query($dbc,"INSERT INTO ux (email, ex, text) values('$email', '$ex', '$text')")
             or die("Erro iserting exercise log!");
 
@@ -58,12 +57,11 @@
             class="card-title">
           Our Mission
         </h1>
-        <p id="home" id="tab" class="card-text p-3"> 
-            &nbsp; Capoeira is an afro-Brazilian art that is intended to enrich all instances of life.
-            <br> &nbsp;&nbsp;&nbsp;Capoeira is a fight, a dance, and a body game. 
-            <br>&nbsp;&nbsp;&nbsp;In this web site, you or your capoeira group will find the keys to connect to other groups, share the capoeira philosophy, and learn about all subjects of capoeira at all levels. The content is all made by the community/users and the posts will be checked to make sure the content is appropriate. 
-            <br>&nbsp;Finnaly, the main objectve is to connect the capoeristas and suport the world wide capoeira grupo.
-            Give and take the best of capoira life is here now!<br>
+        <p id="tab" class="card-text p-3 text-dark">
+            &nbsp; &nbsp;Capoeira is an afro-Brazilian art that is intended to enrich all instances of life.
+            Capoeira is a fight, a dance, and a body game.
+            On this website, you or your Capoeira group will find the keys to connecting to other groups, sharing the Capoeira philosophy, and learning about all subjects of Capoeira at all levels. The content is all made by the community/users and the posts will be checked to make sure the content is appropriate.
+            Finnaly, the main objectve is to connect the capoeristas and suport the world wide Capoeira grupo. Give and take the best of Capoeira life is here now!
         </p>
     </div>
 
@@ -108,7 +106,7 @@
                     rows="3"  
                     name="text" 
                     required 
-                    pattern="[^<>]+[^</>]"></textarea>
+                    pattern=""></textarea>
             </div>
             <button                 
                     class="btn btn-outline-dark btn-warning my-3"

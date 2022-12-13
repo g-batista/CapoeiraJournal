@@ -60,12 +60,6 @@
             style=" height: 55px; width: 65px;">
             </button>
 
-
-
-
-
-
-
               <div class="collapse navbar-collapse" id="navbar">
                   <ul class="d-md-flex ms-auto navbar-nav h6">
                           <li class="nav-item active">

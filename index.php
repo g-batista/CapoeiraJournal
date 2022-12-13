@@ -7,7 +7,7 @@
         // hide element
         echo '
         <style>
-                .hideMypost,.myCommentsHide {
+                .hideMypost, .myCommentsHide {
                     display: none
                 }
         </style>';
@@ -40,14 +40,14 @@
     require_once "header.php";
         
  ?>
-    <a    
-        href="#top" 
-        class="float d-none d-md-block show">
-        &#8593;
-    </a>
 
 <!-- go to top button & display only on md-lg -->
 <div class="container my-2 hideMypost">
+<a    
+        href="#top" 
+        class="float d-none d-md-block ">
+        &#8593;
+    </a>
 
     <div
         class="p-3 border border-warning" 

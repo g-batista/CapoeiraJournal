@@ -108,92 +108,85 @@ if (!isset($_SESSION['user_id'])) {
 
 ?>
 <div class="container">
-  <form 
-  id="form" 
-  class="container my-4 p-2 col-md-4 bg-warning hideForm border border-dark border-2 text-center" 
-  method="post" 
-  action="">
-  <h4 class="text-dark">Edit your account:</h4>
-    <div class="form-group row">   
-        <div class="col-4 mt-3">  
-          <label for="first_name" class="form-label">
-            First name:
+  <div class="container my-3 hideForm col-md-6">
+    <form 
+      id="form" 
+      class="bg-warning form-group my-2 p-2 text-center border border-dark border-2" 
+      method="post" 
+      action="">
+      <h3 class="text-dark">Edit your account:</h3>
+          
+      <label for="first_name" class="form-label h5">
+        First name:
+        <p class="fw-lighter text-muted">Numbers or letters minimum #4</p>
+      </label>
+            <input 
+              type="text" 
+              id="first_name" 
+              name="first_name" 
+              class="form-control text-center"
+              autofocus 
+              required 
+              pattern="[A-Za-z0-9]{4,}"
+              value= "<?php echo $user['first_name'];?>" />
+      
+          <label for="text">
+            Last Name:
+            <p class="fw-lighter text-muted"> Numbers or letters minimum #4</p>
           </label>
-        </div>
-        <div class="col mt-3">
-          <input 
+            <input 
             type="text" 
-            id="first_name" 
-            name="first_name" 
-            class="form-control" 
-            autofocus 
-            required 
-            value= "<?php echo $user['first_name'];?>" />
-        </div>   
-    </div>
-
-    <div class="form-group row mt-2">
-      <div class="col-4">
-        <label for="text"> Last Name:</label>
-      </div>
-      <div class="col">
-        <input 
-          type="text" 
-          id="last_name" 
-          name="last_name" 
-          class="form-control" 
-          value= "<?php echo $user['last_name'];?>" 
-          required />
-      </div>
-    </div>
-
-    <div class="form-group row mt-2">
-      <div class="col-4">
-          <label for="text"> Username:</label>
-      </div>
-      <div class="col">
-          <input 
-            type="text" 
-            id="username" 
-            name="username" 
-            class="form-control" 
-            value= "<?php echo $user['username'];?>" 
+            id="last_name" 
+            name="last_name" 
+            class="form-control text-center" 
+            pattern="[A-Za-z0-9]{4,}"
+            value= "<?php echo $user['last_name'];?>" 
             required />
-      </div>
-    </div>
 
-    <div class="form-group row mt-2">
-      <div class="col-4">
-        <label for="text">Password:</label>
-      </div>
-      <div class="col">
-        <input 
-          type="text" 
-          id="password" 
-          name="password" 
-          class="form-control" 
-          placeholder="New Password" 
-          required/>
-      </div>
-    </div>
+            <label for="text">
+              Username:
+              <p class="fw-lighter text-muted">Numbers or letters minimum #4</p>
+            </label>
+            <input 
+              type="text" 
+              id="username" 
+              name="username" 
+              class="form-control text-center" 
+              pattern="[A-Za-z0-9]{4,}"
+              value= "<?php echo $user['username'];?>" 
+              required />
 
-    <div class="form-group mt-2">
-      <button 
-          type="submit"  
-          value="Submit Form" 
-          name="submit" 
-          class="btn btn-success">
-          Submit
-      </button>
-      <a  type="button"  
-          value="button" 
-          name="button" 
-          class="btn btn-danger ml-2"
-          href="index.php">
-          Cancel
-      </a>
-    </div>
-  </form>
+          <label for="text">
+            Password:
+            <p class="fw-lighter text-muted"> Only number #4</p>
+          </label>
+          <input 
+            type="text" 
+            id="password" 
+            name="password" 
+            class="form-control text-center" 
+            placeholder="New Password"
+            pattern="[0-9]{4}"
+            required/>
+
+      <div class="form-group mt-2">
+        <button 
+            type="submit"  
+            value="Submit Form" 
+            name="submit" 
+            class="btn btn-success">
+            Submit
+        </button>
+        <a  type="button"  
+            value="button" 
+            name="button" 
+            class="btn btn-danger ml-2"
+            href="index.php">
+            Cancel
+        </a>
+      </div>
+    </form>
+  </div>
 </div>
 
 <?php mysqli_close($dbc);
