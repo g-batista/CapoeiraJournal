@@ -128,7 +128,7 @@ $id= $_GET['id'];
 
 
     <div class="text-center">
-      <img class="" img-fluid" src="pictures/<?php echo $comment['picture'];?>"/>
+      <img class="img-fluid" src="pictures/<?php echo $comment['picture'];?>"/>
     </div>
     <div class="form-group my-3">
       <!-- <img class="img-fluid"
